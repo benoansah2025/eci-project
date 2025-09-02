@@ -11,7 +11,7 @@ const Header = () => {
           <img src={logo} alt="Elite Career Initiative Logo" width={120}/>
           <div>
           
-            <h1 className="text-xlg font-bold text-foreground">Empowering Ghana's Future</h1>
+            <h1 className="text-xlg font-bold text-primary">Empowering Ghana's Next Generation Of Leaders</h1>
            
           </div>
         </div>
@@ -19,49 +19,49 @@ const Header = () => {
         <nav className="hidden md:flex items-center space-x-4" role="navigation" aria-label="Main navigation">
           <a 
             href="/" 
-            className="text-foreground hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm px-2 py-1"
+            className="text-primary hover:text-secondary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm px-2 py-1"
             aria-label="Home page"
           >
             Home
           </a>
           <a 
             href="/about" 
-            className="text-foreground hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm px-2 py-1"
+            className="text-primary hover:text-secondary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm px-2 py-1"
             aria-label="Learn about our mission"
           >
             About
           </a>
           <a 
             href="/team" 
-            className="text-foreground hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm px-2 py-1"
+            className="text-primary hover:text-secondary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm px-2 py-1"
             aria-label="Meet our team"
           >
             Team
           </a>
           <a 
             href="/resources" 
-            className="text-foreground hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm px-2 py-1"
+            className="text-primary hover:text-secondary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm px-2 py-1"
             aria-label="Access our resource library"
           >
             Resources
           </a>
           <a 
             href="#programs" 
-            className="text-foreground hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm px-2 py-1"
+            className="text-primary hover:text-secondary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm px-2 py-1"
             aria-label="View our career development programs"
           >
             Programs
           </a>
           <a 
             href="/contact" 
-            className="text-foreground hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm px-2 py-1"
+            className="text-primary hover:text-secondary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm px-2 py-1"
             aria-label="Contact us"
           >
             Contact
           </a>
           <a 
             href="/donate" 
-            className="text-foreground hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm px-2 py-1"
+            className="text-primary hover:text-secondary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm px-2 py-1"
             aria-label="Support our mission"
           >
             Support Us
@@ -80,49 +80,49 @@ const Header = () => {
               <nav className="flex flex-col space-y-4 mt-8" role="navigation" aria-label="Mobile navigation">
                 <a 
                   href="/" 
-                  className="text-foreground hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm px-2 py-1 text-lg"
+                  className="text-primary hover:text-secondary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm px-2 py-1 text-lg"
                   aria-label="Home page"
                 >
                   Home
                 </a>
                 <a 
                   href="/about" 
-                  className="text-foreground hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm px-2 py-1 text-lg"
+                  className="text-primary hover:text-secondary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm px-2 py-1 text-lg"
                   aria-label="Learn about our mission"
                 >
                   About
                 </a>
                 <a 
                   href="/team" 
-                  className="text-foreground hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm px-2 py-1 text-lg"
+                  className="text-primary hover:text-secondary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm px-2 py-1 text-lg"
                   aria-label="Meet our team"
                 >
                   Team
                 </a>
                 <a 
                   href="/resources" 
-                  className="text-foreground hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm px-2 py-1 text-lg"
+                  className="text-primary hover:text-secondary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm px-2 py-1 text-lg"
                   aria-label="Access our resource library"
                 >
                   Resources
                 </a>
                 <a 
                   href="#programs" 
-                  className="text-foreground hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm px-2 py-1 text-lg"
+                  className="text-primary hover:text-secondary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm px-2 py-1 text-lg"
                   aria-label="View our career development programs"
                 >
                   Programs
                 </a>
                 <a 
                   href="/contact" 
-                  className="text-foreground hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm px-2 py-1 text-lg"
+                  className="text-primary hover:text-secondary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm px-2 py-1 text-lg"
                   aria-label="Contact us"
                 >
                   Contact
                 </a>
                 <a 
                   href="/donate" 
-                  className="text-foreground hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm px-2 py-1 text-lg"
+                  className="text-primary hover:text-secondary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm px-2 py-1 text-lg"
                   aria-label="Support our mission"
                 >
                   Support Us
