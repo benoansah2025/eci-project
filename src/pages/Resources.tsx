@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Download, Search, BookOpen, Video, FileText, Users } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Hero from "@/components/hero_resources";
 
 const Resources = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -138,16 +139,16 @@ const Resources = () => {
   return (
     <div className="min-h-screen bg-gradient-warm">
       <Header />
-      
-      <main className="container mx-auto px-4 pt-20 pb-12">
-        <div className="text-center mb-12">
+      <Hero></Hero>
+      <main className="container mx-auto px-4 pt-10 pb-12">
+        {/* <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Resource Library
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Access our comprehensive collection of career development resources to accelerate your professional journey
           </p>
-        </div>
+        </div> */}
 
         {/* Search Bar */}
         <div className="relative max-w-2xl mx-auto mb-8">
@@ -164,15 +165,15 @@ const Resources = () => {
 
         {/* Resource Categories */}
         <Tabs defaultValue="templates" className="w-full">
-          <TabsList className="grid w-full grid-cols-4 mb-8">
-            <TabsTrigger value="templates" aria-label="CV Templates">CV Templates</TabsTrigger>
-            <TabsTrigger value="guides" aria-label="Career Guides">Career Guides</TabsTrigger>
-            <TabsTrigger value="webinars" aria-label="Webinars">Webinars</TabsTrigger>
-            <TabsTrigger value="blogs" aria-label="Blog Articles">Blog Articles</TabsTrigger>
+          <TabsList className="grid w-full grid-cols-4 mb-8 ">
+            <TabsTrigger value="templates" aria-label="CV Templates" className="data-[state=active]:bg-gradient-hero data-[state=active]:text-primary-foreground">CV Templates</TabsTrigger>
+            <TabsTrigger value="guides" aria-label="Career Guides" className="data-[state=active]:bg-gradient-hero data-[state=active]:text-primary-foreground">Career Guides</TabsTrigger>
+            <TabsTrigger value="webinars" aria-label="Webinars" className="data-[state=active]:bg-gradient-hero data-[state=active]:text-primary-foreground">Webinars</TabsTrigger>
+            <TabsTrigger value="blogs" aria-label="Blog Articles" className="data-[state=active]:bg-gradient-hero data-[state=active]:text-primary-foreground">Blog Articles</TabsTrigger>
           </TabsList>
 
           <TabsContent value="templates">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 sm:grid-cols-3 gap-6">
               {filteredResources(resources.templates).map((resource) => (
                 <Card key={resource.id} className="hover:shadow-elegant transition-shadow">
                   <CardHeader>
@@ -181,14 +182,14 @@ const Resources = () => {
                         {getIcon(resource.type)}
                         <CardTitle className="text-lg">{resource.title}</CardTitle>
                       </div>
-                      <Badge variant="secondary">{resource.type}</Badge>
+                      <Badge variant="hero">{resource.type}</Badge>
                     </div>
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground mb-4">{resource.description}</p>
                     <div className="flex flex-wrap gap-2 mb-4">
                       {resource.tags.map((tag) => (
-                        <Badge key={tag} variant="outline">{tag}</Badge>
+                        <Badge key={tag} variant="hero">{tag}</Badge>
                       ))}
                     </div>
                     <div className="flex items-center justify-between">
@@ -207,7 +208,7 @@ const Resources = () => {
           </TabsContent>
 
           <TabsContent value="guides">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 sm:grid-cols-3 gap-6">
               {filteredResources(resources.guides).map((resource) => (
                 <Card key={resource.id} className="hover:shadow-elegant transition-shadow">
                   <CardHeader>
@@ -216,14 +217,14 @@ const Resources = () => {
                         {getIcon(resource.type)}
                         <CardTitle className="text-lg">{resource.title}</CardTitle>
                       </div>
-                      <Badge variant="secondary">{resource.type}</Badge>
+                      <Badge variant="hero">{resource.type}</Badge>
                     </div>
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground mb-4">{resource.description}</p>
                     <div className="flex flex-wrap gap-2 mb-4">
                       {resource.tags.map((tag) => (
-                        <Badge key={tag} variant="outline">{tag}</Badge>
+                        <Badge key={tag} variant="hero">{tag}</Badge>
                       ))}
                     </div>
                     <div className="flex items-center justify-between">
@@ -242,7 +243,7 @@ const Resources = () => {
           </TabsContent>
 
           <TabsContent value="webinars">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 sm:grid-cols-3 gap-6">
               {filteredResources(resources.webinars).map((resource) => (
                 <Card key={resource.id} className="hover:shadow-elegant transition-shadow">
                   <CardHeader>
@@ -251,14 +252,14 @@ const Resources = () => {
                         {getIcon(resource.type)}
                         <CardTitle className="text-lg">{resource.title}</CardTitle>
                       </div>
-                      <Badge variant="secondary">{resource.type}</Badge>
+                      <Badge variant="hero">{resource.type}</Badge>
                     </div>
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground mb-4">{resource.description}</p>
                     <div className="flex flex-wrap gap-2 mb-4">
                       {resource.tags.map((tag) => (
-                        <Badge key={tag} variant="outline">{tag}</Badge>
+                        <Badge key={tag} variant="hero">{tag}</Badge>
                       ))}
                     </div>
                     <div className="flex items-center justify-between">
@@ -277,7 +278,7 @@ const Resources = () => {
           </TabsContent>
 
           <TabsContent value="blogs">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 sm:grid-cols-3 gap-6">
               {filteredResources(resources.blogs).map((resource) => (
                 <Card key={resource.id} className="hover:shadow-elegant transition-shadow">
                   <CardHeader>
@@ -286,21 +287,21 @@ const Resources = () => {
                         {getIcon(resource.type)}
                         <CardTitle className="text-lg">{resource.title}</CardTitle>
                       </div>
-                      <Badge variant="secondary">{resource.type}</Badge>
+                      <Badge variant="hero">{resource.type}</Badge>
                     </div>
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground mb-4">{resource.description}</p>
                     <div className="flex flex-wrap gap-2 mb-4">
                       {resource.tags.map((tag) => (
-                        <Badge key={tag} variant="outline">{tag}</Badge>
+                        <Badge key={tag} variant="hero">{tag}</Badge>
                       ))}
                     </div>
                     <div className="flex items-center justify-between">
                       <span className="text-sm text-muted-foreground">
                         {resource.readTime}
                       </span>
-                      <Button size="sm" variant="outline">
+                      <Button size="sm" variant="hero">
                         Read More
                       </Button>
                     </div>
