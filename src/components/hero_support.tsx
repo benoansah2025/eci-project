@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/about_2.jpg";
+import heroImage from "@/assets/ECI_sup.jpg";
 
 const Hero = () => {
   return (
@@ -11,7 +11,7 @@ const Hero = () => {
         role="img"
         aria-label="Young African professionals and students in mentorship and career development settings"
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-background/20 via-background/85 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-background/10 via-background/85 to-transparent"></div>
       </div>
       
       {/* Content */}

@@ -8,6 +8,7 @@ import { Heart, Users, Award, Shield, CheckCircle, Building, Handshake, Star } f
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useToast } from "@/hooks/use-toast";
+import Hero from "@/components/hero_support";
 
 const Donate = () => {
   const { toast } = useToast();
@@ -102,7 +103,7 @@ const Donate = () => {
   return (
     <div className="min-h-screen bg-gradient-warm">
       <Header />
-      
+      <Hero />
       <main className="container mx-auto px-4 pt-20 pb-12">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
