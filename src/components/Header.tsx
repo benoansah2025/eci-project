@@ -5,7 +5,7 @@ import logo from "@/assets/eci-back2.png";
 
 const Header = () => {
   return (
-    <header className="bg-background/70 backdrop-blur-sm border-b border-border sticky top-0 z-50" role="banner">
+    <header className="bg-background/30 backdrop-blur-sm border-b border-border sticky top-0 z-50" role="banner">
       <div className="container mx-auto px-3 py-1 flex items-center justify-between">
         <div className="flex items-center space-x-5">
           <img src={logo} alt="Elite Career Initiative Logo" width={120}/>
