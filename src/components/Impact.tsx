@@ -1,4 +1,11 @@
-import { Card, CardContent } from "@/components/ui/card";
+// import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter, CardImage } from "@/components/ui/card"
+import images from "@/assets/acquisition.jpg";
+import appointment from "@/assets/appointment_letter_confirmed.jpg";
+import images1 from "@/assets/job_acquisition.jpg";
+import images2 from "@/assets/career_breakthrough_2.jpg"
+import images3 from "@/assets/man_3.jpg";
+import images4 from "@/assets/mentee_sharing.jpg";
 
 const Impact = () => {
   const testimonials = [
@@ -7,21 +14,21 @@ const Impact = () => {
       role: "Software Developer",
       company: "Tech Solutions Ghana",
       quote: "ECI's mentorship program was a game-changer. My mentor helped me navigate the tech industry and land my dream job within 3 months of graduating.",
-      image: "🧑‍💻"
+      CardImage: appointment
     },
     {
       name: "Akosua Mensah",
       role: "Marketing Manager",
       company: "Creative Agency Accra",
       quote: "The career workshops gave me the confidence and skills I needed. I went from unemployed graduate to marketing manager in just 6 months.",
-      image: "👩‍💼"
+      CardImage: images
     },
     {
       name: "Samuel Ofori",
       role: "Financial Analyst",
       company: "Ghana Investment Bank",
       quote: "ECI didn't just help me find a job - they helped me build a career. The professional network I gained has been invaluable for my growth.",
-      image: "👨‍💼"
+      CardImage: images3
     }
   ];
 
@@ -44,7 +51,7 @@ const Impact = () => {
             Transforming lives and building Ghana's future workforce, one career at a time.
           </p>
           
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-4 gap-18">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="text-4xl md:text-5xl font-bold text-primary mb-2">
@@ -71,29 +78,38 @@ const Impact = () => {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <Card key={index} className="bg-card shadow-elegant hover:shadow-warm transition-all duration-300">
-              <CardContent className="p-8 text-center">
-                <div className="text-6xl mb-4">{testimonial.image}</div>
-                <blockquote className="text-muted-foreground italic mb-6 leading-relaxed">
-                  "{testimonial.quote}"
-                </blockquote>
-                <div className="border-t border-border pt-4">
-                  <div className="font-semibold text-card-foreground">
-                    {testimonial.name}
-                  </div>
-                  <div className="text-primary font-medium text-sm">
-                    {testimonial.role}
-                  </div>
-                  <div className="text-muted-foreground text-sm">
-                    {testimonial.company}
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+       <div className="grid md:grid-cols-3 gap-6">
+  {testimonials.map((testimonial, index) => (
+    <Card
+      key={index}
+      className="bg-card shadow-elegant hover:shadow-warm transition-all duration-300"
+    >
+      {/* CardImage goes above content */}
+      <CardImage
+        src={testimonial.CardImage} // ✅ pass image path here
+        alt={`${testimonial.name} success story`}
+        className="h-100 w-full object-cover mb-4"
+      />
+
+      <CardContent className="p-8 text-center">
+        <blockquote className="text-muted-foreground italic mb-6 leading-relaxed">
+          "{testimonial.quote}"
+        </blockquote>
+        <div className="border-t border-border pt-4">
+          <div className="font-semibold text-card-foreground">
+            {testimonial.name}
+          </div>
+          <div className="text-primary font-medium text-sm">
+            {testimonial.role}
+          </div>
+          <div className="text-muted-foreground text-sm">
+            {testimonial.company}
+          </div>
         </div>
+      </CardContent>
+    </Card>
+  ))}
+</div>
       </div>
     </section>
   );
