@@ -2,7 +2,7 @@ import EciLogo from "@/components/EciLogo";
 
 const Footer = () => {
   return (
-    <footer className="bg-secondary text-secondary-foreground py-16" role="contentinfo">
+    <footer className="bg-gradient-brand blur-30 text-primary-foreground py-16" role="contentinfo">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
@@ -11,10 +11,10 @@ const Footer = () => {
               <EciLogo className="w-10 h-10" />
               <div>
                 <h3 className="text-lg font-semibold">Elite Career Initiative</h3>
-                <p className="text-sm text-secondary-foreground/80">Empowering Ghana's Future</p>
+                <p className="text-sm text-primary-foreground/80">Empowering Ghana's Future</p>
               </div>
             </div>
-            <p className="text-secondary-foreground/90 mb-4 max-w-md">
+            <p className="text-primary-foreground/90 mb-4 max-w-md">
               Bridging the gap between education and employment through comprehensive 
               career development programs, mentorship, and professional opportunities.
             </p>

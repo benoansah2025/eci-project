@@ -126,7 +126,7 @@ const GoogleMap = () => {
             <div>
               <h4 className="font-semibold text-foreground mb-2">Directions</h4>
               <p className="text-muted-foreground text-sm">
-                Located within the University of Ghana campus, easily accessible by public transport and private vehicles.
+                Located within the Airport Residential Area, easily accessible by public transport and private vehicles.
               </p>
             </div>
           </div>
