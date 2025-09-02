@@ -4,7 +4,7 @@ const HowItWorks = () => {
   const steps = [
     {
       step: "1",
-      title: "Apply & Assess",
+      title: "Apply & Access",
       description: "Submit your application and complete our career readiness assessment to understand your current position and goals.",
       icon: "📝"
     },

@@ -4,6 +4,7 @@ import { Progress } from "@/components/ui/progress";
 import { Target, Eye, Route, Building, Users, Award, Lightbulb, HandHeart } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Hero from "@/components/Hero_about";
 
 const About = () => {
   const organizationalPillars = [
@@ -31,7 +32,7 @@ const About = () => {
 
   const roadmapMilestones = [
     {
-      year: "2024",
+      year: "2025",
       title: "Foundation & Growth",
       objectives: [
         "Reach 5,000 program participants",
@@ -42,7 +43,7 @@ const About = () => {
       progress: 75
     },
     {
-      year: "2025",
+      year: "2026",
       title: "Digital Innovation",
       objectives: [
         "Launch AI-powered career matching system",
@@ -53,7 +54,7 @@ const About = () => {
       progress: 30
     },
     {
-      year: "2026",
+      year: "2027",
       title: "Regional Expansion",
       objectives: [
         "Expand to 5 West African countries",
@@ -64,7 +65,7 @@ const About = () => {
       progress: 15
     },
     {
-      year: "2027",
+      year: "2028",
       title: "Sustainability & Scale",
       objectives: [
         "Achieve financial self-sustainability",
@@ -75,7 +76,7 @@ const About = () => {
       progress: 10
     },
     {
-      year: "2028",
+      year: "2029",
       title: "Continental Impact",
       objectives: [
         "Operate in 10+ African countries",
@@ -97,10 +98,10 @@ const About = () => {
   return (
     <div className="min-h-screen bg-gradient-warm">
       <Header />
-      
-      <main className="container mx-auto px-4 pt-20 pb-12">
-        {/* Hero Section */}
-        <div className="text-center mb-16">
+        <Hero />
+      <main className="container mx-auto px-4 pb-12">
+       
+        {/* <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             About Elite Career Initiative
           </h1>
@@ -108,10 +109,10 @@ const About = () => {
             Founded with a passion for empowering Ghana's youth, we bridge the gap between education and employment, 
             creating pathways for young professionals to thrive in the modern economy.
           </p>
-        </div>
+        </div> */}
 
         {/* Mission & Vision */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16 pt-12">
           <Card className="bg-gradient-to-br from-primary/5 to-secondary/5 border-primary/20">
             <CardHeader>
               <CardTitle className="flex items-center gap-3">
