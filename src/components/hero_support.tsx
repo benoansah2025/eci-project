@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/about_2.jpg";
+import heroImage from "@/assets/sponsor_3.jpg";
 
 const Hero = () => {
   return (
@@ -11,20 +11,21 @@ const Hero = () => {
         role="img"
         aria-label="Young African professionals and students in mentorship and career development settings"
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-background/20 via-background/85 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-background/40 via-background/85 to-transparent"></div>
       </div>
       
       {/* Content */}
       <div className="relative z-10 container mx-auto text-center md:text-left">
         <div className="max-w-4xl mx-auto text-center ">
-          <h1 className="md:text-7xl font-bold text-primary mb-8 pt-40">
-            About ECI
+          <h1 className="md:text-7xl font-bold text-secondary-foreground mb-8 pt-40">
+            Support <span className="text-primary ">Our Mission</span>
             {/* <span className="text-primary block mt-3">Employment Success</span> */}
+             <p className="text-lg md:text-3xl text-secondary-foreground  mb-8 max-w-1xl pb-20">
+            Help us bridge the gap between education and employment in Ghana. Your contribution makes a lasting impact.
+          </p>
           </h1>
           
-          <p className="text-lg md:text-3xl text-primary  mb-8 max-w-1xl pt-15">
-            Founded with a passion for empowering Ghana's youth, we bridge the gap between education and employment, creating pathways for young professionals to thrive in the modern economy.
-          </p>
+         
      
         </div>
       </div>

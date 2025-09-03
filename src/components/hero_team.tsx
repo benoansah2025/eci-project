@@ -17,12 +17,12 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto text-center md:text-left">
         <div className="max-w-4xl mx-auto text-center ">
-          <h1 className="md:text-7xl font-bold text-primary mb-8 pt-40">
-            Meet Our Team
+          <h1 className="md:text-7xl font-bold text-secondary-foreground mb-8 pt-40">
+            Meet <span className="text-primary ">Our Team</span>
             {/* <span className="text-primary block mt-3">Employment Success</span> */}
           </h1>
           
-          <p className="text-lg md:text-3xl text-primary font-regular  mb-8 max-w-1xl pb-20">
+          <p className="text-lg md:text-3xl text-secondary-foreground  mb-8 max-w-1xl pb-20">
             Passionate professionals dedicated to empowering Ghana's youth and transforming career development across West Africa.
           </p>
         </div>

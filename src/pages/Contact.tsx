@@ -13,6 +13,7 @@ import Footer from "@/components/Footer";
 import GoogleMap from "@/components/GoogleMap";
 import { useToast } from "@/hooks/use-toast";
 import contactHeroImage from "@/assets/contact-hero.jpg";
+import Hero from "@/components/hero_contact";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -121,13 +122,13 @@ const Contact = () => {
       
       <main className="pb-12">
         {/* Hero Section */}
-        <div className="relative h-96 overflow-hidden">
+        {/* <div className="relative h-96 overflow-hidden">
           <img 
             src={contactHeroImage} 
             alt="Professional team meeting in a modern office environment"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-background/90 to-background/60 flex items-center">
+          <div className="absolute inset-0 bg-gradient-to-r from-background/90 to-background/60 flex items-center text-center">
             <div className="container mx-auto px-4">
               <div className="max-w-2xl">
                 <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
@@ -139,8 +140,8 @@ const Contact = () => {
               </div>
             </div>
           </div>
-        </div>
-
+        </div> */}
+        <Hero />
         <div className="container mx-auto px-4 -mt-12 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
             {/* Contact Form */}
@@ -277,7 +278,7 @@ const Contact = () => {
                   Get instant support through WhatsApp for quick questions and updates.
                 </p>
                 <Button 
-                  variant="outline" 
+                  variant="hero" 
                   className="w-full" 
                   onClick={() => window.open("https://wa.me/23324123456", "_blank")}
                   aria-label="Contact us on WhatsApp"
@@ -301,7 +302,7 @@ const Contact = () => {
                   {socialLinks.map((social) => (
                     <Button
                       key={social.name}
-                      variant="outline"
+                      variant="hero"
                       size="sm"
                       className="gap-2"
                       onClick={() => window.open(social.url, "_blank")}
@@ -345,12 +346,12 @@ const Contact = () => {
 
           {/* Location & Map Section */}
           <Card className="mb-16">
-          <CardHeader>
+          {/* <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <MapPin className="w-6 h-6" />
               Find Us
             </CardTitle>
-          </CardHeader>
+          </CardHeader> */}
           <CardContent>
             <GoogleMap />
           </CardContent>
@@ -363,16 +364,16 @@ const Contact = () => {
                 <h2 className="text-2xl font-semibold mb-4">Response Times</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   <div className="text-center">
-                    <Badge variant="secondary" className="mb-2">General Inquiries</Badge>
-                    <p className="text-muted-foreground">Within 24 hours</p>
+                    <Badge variant="hero" className="mb-2">General Inquiries</Badge>
+                    <p className="text-secondary-foreground">Within 24 hours</p>
                   </div>
                   <div className="text-center">
-                    <Badge variant="secondary" className="mb-2">WhatsApp</Badge>
-                    <p className="text-muted-foreground">Within 2 hours</p>
+                    <Badge variant="hero" className="mb-2">WhatsApp</Badge>
+                    <p className="text-secondary-foreground">Within 2 hours</p>
                   </div>
                   <div className="text-center">
-                    <Badge variant="secondary" className="mb-2">Urgent Matters</Badge>
-                    <p className="text-muted-foreground">Within 4 hours</p>
+                    <Badge variant="hero" className="mb-2">Urgent Matters</Badge>
+                    <p className="text-secondary-foreground">Within 4 hours</p>
                   </div>
                 </div>
               </div>

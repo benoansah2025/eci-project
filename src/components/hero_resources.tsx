@@ -17,12 +17,12 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto text-center md:text-left">
         <div className="max-w-4xl mx-auto text-center ">
-          <h1 className="md:text-7xl font-bold text-primary mb-8 pt-40">
-            Resource Library
-            {/* <span className="text-primary block mt-3">Employment Success</span> */}
+          <h1 className="md:text-7xl font-bold text-secondary-foreground mb-8 pt-40">
+            Resource 
+            <span className="text-primary">&nbsp;Library</span>
           </h1>
           
-          <p className="text-lg md:text-3xl text-primary  mb-8 max-w-1xl pt-15">
+          <p className="text-lg md:text-3xl text-secondary-foreground  mb-8 max-w-1xl pb-20">
             Access our comprehensive collection of career development resources to accelerate your professional journey
           </p>
           

@@ -15,7 +15,7 @@ const GoogleMap = () => {
   const eciLocation = {
     lat: 5.6512,
     lng: -0.1870,
-    address: "University of Ghana Campus, Legon, Accra, Ghana"
+    address: "NCA Tower, Airport Residential Area, Accra, Ghana"
   };
 
   const handleLoadMap = () => {
@@ -38,7 +38,7 @@ const GoogleMap = () => {
 
   return (
     <div className="space-y-6">
-      <Card>
+      {/* <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Info className="w-5 h-5" />
@@ -50,7 +50,7 @@ const GoogleMap = () => {
             <p className="text-sm text-muted-foreground">
               To display the interactive map, please enter your Google Maps API key. 
               You can get one from the <a 
-                href="https://developers.google.com/maps/documentation/javascript/get-api-key" 
+                href="https://maps.app.goo.gl/3ttsakvRJrYCBLHv9" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-primary underline hover:no-underline"
@@ -77,7 +77,7 @@ const GoogleMap = () => {
             </div>
           </div>
         </CardContent>
-      </Card>
+      </Card> */}
 
       <Card>
         <CardHeader>
@@ -88,25 +88,26 @@ const GoogleMap = () => {
         </CardHeader>
         <CardContent>
           <div className="h-64 bg-muted rounded-lg border-2 border-dashed border-muted-foreground/25 flex items-center justify-center">
-            {mapLoaded ? (
+            
               <div className="text-center space-y-4">
                 <div className="text-6xl">📍</div>
                 <div>
                   <h3 className="font-semibold text-lg text-foreground">Elite Career Initiative</h3>
                   <p className="text-muted-foreground">{eciLocation.address}</p>
-                  <p className="text-sm text-muted-foreground mt-2">
+                  {/* <p className="text-sm text-muted-foreground mt-2">
                     Coordinates: {eciLocation.lat}, {eciLocation.lng}
-                  </p>
+                  </p> */}
                 </div>
                 <Button 
                   variant="outline" 
                   size="sm"
-                  onClick={() => window.open(`https://maps.google.com/?q=${eciLocation.lat},${eciLocation.lng}`, "_blank")}
+                  onClick={() => window.open(`https://maps.app.goo.gl/3ttsakvRJrYCBLHv9`, "_blank")}
                 >
                   Open in Google Maps
                 </Button>
               </div>
-            ) : (
+            
+            {/* : (
               <div className="text-center space-y-2">
                 <MapPin className="w-12 h-12 text-muted-foreground mx-auto" />
                 <p className="text-muted-foreground">Enter API key above to display interactive map</p>
@@ -114,7 +115,7 @@ const GoogleMap = () => {
                   Location: {eciLocation.address}
                 </p>
               </div>
-            )}
+            )} */}
           </div>
           
           {/* Location Details */}

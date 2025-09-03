@@ -8,6 +8,7 @@ import { Heart, Users, Award, Shield, CheckCircle, Building, Handshake, Star } f
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useToast } from "@/hooks/use-toast";
+import Hero from "@/components/hero_support";
 
 const Donate = () => {
   const { toast } = useToast();
@@ -102,16 +103,19 @@ const Donate = () => {
   return (
     <div className="min-h-screen bg-gradient-warm">
       <Header />
-      
+      <Hero />
       <main className="container mx-auto px-4 pt-20 pb-12">
-        <div className="text-center mb-12">
+         <p className="text-lg md:text-3xl text-primary  mb-8 max-w-1xl">
+            Help us bridge the gap between education and employment in Ghana. Your contribution makes a lasting impact.
+          </p>
+        {/* <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Support Our Mission
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Help us bridge the gap between education and employment in Ghana. Your contribution makes a lasting impact.
           </p>
-        </div>
+        </div> */}
 
         {/* Impact Statistics */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
