@@ -27,7 +27,7 @@ const GetInvolved = () => {
         "Professional recognition"
       ],
       cta: "Become a Mentor",
-      highlight: "2 hours per month commitment"
+      highlight: "10 hours per week commitment"
     },
     {
       title: "Companies & Organizations",
@@ -75,7 +75,7 @@ const GetInvolved = () => {
               </CardHeader>
               
               <CardContent className="flex-1 flex flex-col">
-                <p className="text-muted-foreground mb-6 text-center">
+                <p className="text-secondary-foreground mb-6 text-center">
                   {opportunity.description}
                 </p>
                 
@@ -83,18 +83,18 @@ const GetInvolved = () => {
                   {opportunity.benefits.map((benefit, benefitIndex) => (
                     <div key={benefitIndex} className="flex items-center text-sm">
                       <div className="w-2 h-2 bg-primary rounded-full mr-3 flex-shrink-0"></div>
-                      <span className="text-foreground">{benefit}</span>
+                      <span className="text-secondary-foreground">{benefit}</span>
                     </div>
                   ))}
                 </div>
                 
                 <div className="mt-auto">
                   <div className="bg-muted rounded-lg p-3 mb-4 text-center">
-                    <span className="text-xs font-medium text-muted-foreground">
+                    <span className="text-xs font-medium text-secondary-foreground">
                       {opportunity.highlight}
                     </span>
                   </div>
-                  <Button className="w-full" variant={index === 0 ? "hero" : "cta"} size="lg">
+                  <Button className="w-full" variant="hero" size="lg">
                     {opportunity.cta}
                   </Button>
                 </div>
@@ -113,7 +113,7 @@ const GetInvolved = () => {
               Your donation directly funds scholarships, programs, and resources.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="cta" size="lg">
+              <Button variant="hero" size="lg">
                 Donate Now
               </Button>
               <Button variant="outline" size="lg">

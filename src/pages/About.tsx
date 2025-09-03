@@ -165,7 +165,7 @@ const About = () => {
                 expectations created barriers that limited potential and hindered economic growth.
               </p>
               <p className="text-lg leading-relaxed mb-6">
-                Founded in 2023 by a team of passionate educators, industry professionals, and former students 
+                Founded in 2025 by a team of passionate educators, industry professionals, and former students 
                 who experienced these challenges firsthand, ECI set out to create comprehensive solutions. We 
                 began with small workshops at the University of Ghana, focusing on CV writing and interview 
                 preparation. The overwhelming response and success stories from our first participants confirmed 
