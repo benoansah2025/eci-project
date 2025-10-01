@@ -17,10 +17,14 @@ const Index = () => {
       >
         Skip to main content
       </a>
-      
-      <Header />
-      <main id="main-content" role="main">
+       <div className="relative">
         <Hero />
+        <Header />
+      </div>
+
+      {/* <Header /> */}
+      <main id="main-content" role="main">
+        {/* <Hero /> */}
         <Programs />
         <HowItWorks />
         <Impact />
