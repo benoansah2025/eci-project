@@ -3,9 +3,19 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import logo from "@/assets/eci-back2.png";
 import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 const Header = () => {
    const navigate = useNavigate();
+    const location = useLocation();
+    useEffect(() => {
+        if (location.hash === "#sign-in") {
+          document.getElementById("sign-in")?.scrollIntoView({ behavior: "smooth" });
+        } else if (location.hash === "#sign-up") {
+          document.getElementById("sign-up")?.scrollIntoView({ behavior: "smooth" });
+        }
+  }, [location]);
   return (
     <header className="fixed top-0 left-0 w-full backdrop-blur-lg bg-transparent z-50" role="banner">
       <div className="container mx-auto px-3 py-1 flex items-center justify-between">

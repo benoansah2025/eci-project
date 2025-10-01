@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Team from "./pages/Team";
+import Programs from "./pages/Programs";
 import Resources from "./pages/Resources";
 import Contact from "./pages/Contact";
 import Donate from "./pages/Donate";
@@ -40,7 +41,7 @@ const App = () => (
           <Route path="/auth/verify-otp" element={<VerifyOTP />} />
           <Route path="/auth/verify-email" element={<VerifyEmail />} />
           <Route path="/auth/callback" element={<AuthCallback />} />
-          
+           <Route path="/programs" element={<Programs />} />
 
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

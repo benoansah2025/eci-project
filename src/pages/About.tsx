@@ -5,8 +5,22 @@ import { Target, Eye, Route, Building, Users, Award, Lightbulb, HandHeart } from
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero_about";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 const About = () => {
+  const location = useLocation(); 
+ // ✅ Scroll to section if hash is present
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace("#", ""); // "programs-section"
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
+
   const organizationalPillars = [
     {
       icon: <Award className="w-8 h-8" />,
@@ -183,7 +197,7 @@ const About = () => {
         </Card>
 
         {/* Achievements */}
-        <div className="mb-16">
+        <div className="mb-16 scroll-mt-40" id ="impact-section">
           <h2 className="text-3xl font-bold text-center mb-8">Our Impact</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {achievements.map((achievement, index) => (

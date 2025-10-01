@@ -9,12 +9,24 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useToast } from "@/hooks/use-toast";
 import Hero from "@/components/hero_support";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 const Donate = () => {
   const { toast } = useToast();
   const [selectedAmount, setSelectedAmount] = useState(0);
   const [lastSubmission, setLastSubmission] = useState<number | null>(null);
 
+const location = useLocation();
+ useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace("#", ""); // "programs-section"
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
   const donationAmounts = [25, 50, 100, 250, 500, 1000];
   
   const handleDonation = (amount: number) => {
@@ -118,7 +130,7 @@ const Donate = () => {
         </div> */}
 
         {/* Impact Statistics */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12" id="donate-section">
           {impactStats.map((stat, index) => (
             <Card key={index} className="text-center">
               <CardContent className="p-6">

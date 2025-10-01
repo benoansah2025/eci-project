@@ -1,7 +1,54 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { useNavigate, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 const GetInvolved = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  // Scroll to hash when page loads or route changes
+  useEffect(() => {
+    if (location.hash === "#programs-section") {
+      document.getElementById("programs-section")?.scrollIntoView({ behavior: "smooth" });
+    }
+    else if (location.hash === "#impact-section") {
+      document.getElementById("impact-section")?.scrollIntoView({ behavior: "smooth" });
+    }
+    else if (location.hash === "#donate-section"){
+      document.getElementById("donate-section")?.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [location]);
+
+  const handleImpact = () => {
+    if (location.pathname === "/about") {
+      // Already on programs page
+      document.getElementById("impact-section")?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      // Navigate with hash
+      navigate("/about#impact-section");
+    }
+  };
+ const handledonate = () => {
+    if (location.pathname === "/donate") {
+      // Already on programs page
+      document.getElementById("donate-section")?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      // Navigate with hash
+      navigate("/donate#donate-section");
+    }
+  };
+
+  const handleLearnMoreClick = () => {
+    if (location.pathname === "/programs") {
+      // Already on programs page
+      document.getElementById("programs-section")?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      // Navigate with hash
+      navigate("/programs#programs-section");
+    }
+  
+  };
   const opportunities = [
     {
       title: "Students & Graduates",
@@ -94,9 +141,14 @@ const GetInvolved = () => {
                       {opportunity.highlight}
                     </span>
                   </div>
-                  <Button className="w-full" variant="hero" size="lg">
+                  <Button
+                    className="w-full" variant="hero" size="lg"
+
+                    onClick={handleLearnMoreClick}
+                  >
                     {opportunity.cta}
                   </Button>
+
                 </div>
               </CardContent>
             </Card>
@@ -113,10 +165,10 @@ const GetInvolved = () => {
               Your donation directly funds scholarships, programs, and resources.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="hero" size="lg">
-                Donate Now
+              <Button variant="hero" size="lg" onClick={handledonate}>
+              Donate Now
               </Button>
-              <Button variant="outline" size="lg">
+              <Button variant="outline" size="lg"  onClick={handleImpact}>
                 Learn About Impact
               </Button>
             </div>

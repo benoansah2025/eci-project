@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -13,6 +13,8 @@ import { supabase } from "@/integrations/supabase/client";
 import { Eye, EyeOff, UserPlus } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { useLocation } from "react-router-dom";
+
 
 const signUpSchema = z.object({
   firstName: z.string().min(1, "First name is required").max(50, "First name must be less than 50 characters"),
@@ -41,7 +43,17 @@ const SignUp = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
   const navigate = useNavigate();
-
+const location = useLocation(); 
+ // ✅ Scroll to section if hash is present
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace("#", ""); // "sign-in"
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
   const {
     register,
     handleSubmit,
@@ -103,9 +115,9 @@ const SignUp = () => {
   return (
     <div className="min-h-screen bg-gradient-warm">
       <Header />
-      
+      <br />
       <div className="container mx-auto px-4 py-12">
-        <div className="max-w-md mx-auto">
+        <div className="max-w-md mx-auto mt-scroll-40" id="sign-up">
           <Card className="shadow-elegant border-border/20">
             <CardHeader className="text-center">
               <div className="mx-auto w-12 h-12 bg-gradient-brand rounded-full flex items-center justify-center mb-4">

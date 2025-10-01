@@ -1,7 +1,29 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { useNavigate, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 const Programs = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  // Scroll to hash when page loads or route changes
+  useEffect(() => {
+    if (location.hash === "#programs-section") {
+      document.getElementById("programs-section")?.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [location]);
+
+  const handleLearnMoreClick = () => {
+    if (location.pathname === "/programs") {
+      // Already on programs page
+      document.getElementById("programs-section")?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      // Navigate with hash
+      navigate("/programs#programs-section");
+    }
+  };
+
   const programs = [
     {
       title: "Career Development Workshops",
@@ -74,7 +96,12 @@ const Programs = () => {
                   ))}
                 </div>
                 
-                <Button className="w-full" variant="outline" aria-label={`Learn more about ${program.title}`}>
+                <Button 
+                  className="w-full" 
+                  variant="outline" 
+                  aria-label={`Learn more about ${program.title}`} 
+                  onClick={handleLearnMoreClick}
+                >
                   Learn More
                 </Button>
               </CardContent>
