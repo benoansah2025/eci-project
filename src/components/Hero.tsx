@@ -35,15 +35,15 @@ const Hero = () => {
               className="text-lg px-8 py-4"
               aria-label="Start your career development journey with ECI"
             >
-              Start Your Journey
+              <a href="#how-it-works">Start Your Journey</a>
             </Button>
             <Button 
-              variant="outline" 
+              variant="hero" 
               size="lg" 
-              className="text-lg px-8 py-4 border-foreground text-foreground hover:bg-foreground hover:text-background"
+              className="text-lg px-8 py-4 border-foreground text-primary-foreground hover:bg-primary hover:text-primary-foreground"
               aria-label="Apply to become a mentor and share your expertise"
             >
-              Become a Mentor
+            <a href="#programs">Become a Mentor</a>  
             </Button>
           </div>
           
@@ -68,3 +68,4 @@ const Hero = () => {
 };
 
 export default Hero;
+

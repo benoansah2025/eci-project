@@ -87,41 +87,49 @@ const Footer = () => {
   </ul>
           </div>
         </div>
-        
-        <div className="border-t border-primary-foreground pt-6 space-x-6 text-center">
-          <div className="flex flex-col md:flex-row items-center gap-6 text-center">
-              <a 
-                href="https://linkedin.com/company/elite-career-initiative" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary/80 hover:text-primary transition-colors"
-                aria-label="Visit our LinkedIn page"
-              >
+        <br />
+       <div className="border-t border-primary-foreground space-x-6 text-center">
+          <div className="flex md:flex-row items-center gap-6 text-center">
+            <a
+              href="https://linkedin.com/company/elite-career-initiatives"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary/80 hover:text-primary transition-colors"
+              aria-label="Visit our LinkedIn page"
+            >
               <Linkedin className="w-10 h-10" />
-              </a>
-              <a 
-                href="https://instagram.com/elitecareergh" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary/80 hover:text-primary transition-colors"
-                aria-label="Visit our Twitter page"
-              >
-                <Instagram className="h-10 w-10" />
-              </a>
-              <a 
-                href="https://facebook.com/elitecareerinitiative" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary/80 hover:text-primary transition-colors"
-                aria-label="Visit our Facebook page"
-              >
-             <Facebook className="h-10 w-10" />
-              </a>
-            </div>
+            </a>
+            <a
+              href="https://instagram.com/elitecareergh"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary/80 hover:text-primary transition-colors"
+              aria-label="Visit our Twitter page"
+            >
+              <Instagram className="h-10 w-10" />
+            </a>
+            <a
+              href="https://facebook.com/elitecareerinitiative"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary/80 hover:text-primary transition-colors"
+              aria-label="Visit our Facebook page"
+            >
+              <Facebook className="h-10 w-10" />
+            </a>
+          </div>
+          <br />
           <p className="text-lg text-primary">
-  
-            © 2025 Elite Career Initiative.
-             <br></br>All rights reserved.
+            Elite Career Initiatives
+
+          </p>
+          <p className="text-md text-primary">
+            © copyright 2025
+
+          </p>
+          <p className="text-sm text-primary">
+
+            All rights reserved.
           </p>
         </div>
       </div>
