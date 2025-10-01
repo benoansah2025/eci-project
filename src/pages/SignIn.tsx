@@ -102,9 +102,9 @@ const location = useLocation();
       } else {
         toast({
           title: "Success!",
-          description: "Please verify your identity with the OTP sent to your email.",
+          description: "Welcome to ECI dashboard!",
         });
-        navigate("/auth/verify-otp", { 
+        navigate("/dashboard", { 
           state: { email, isSignIn: true } 
         });
       }
