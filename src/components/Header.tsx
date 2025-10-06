@@ -19,11 +19,11 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 w-full backdrop-blur-lg bg-transparent z-50" role="banner">
       <div className="container mx-auto px-3 py-1 flex items-center justify-between">
-        <div className="flex items-center space-x-5">
+        <div className="flex items-center space-x-3">
           <img src={logo} alt="Elite Career Initiative Logo" width={80}/>
           <div>
           
-            <h1 className="text-xlg font-bold text-primary">Empowering Ghana's Next Generation Of Leaders</h1>
+            <h1 className="text-xlg font-bold text-primary">Empowering Ghana's <br />Next Generation Of Leaders</h1>
            
           </div>
         </div>

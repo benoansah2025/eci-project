@@ -22,6 +22,7 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar";
+import logo from "@/assets/eci-back2.png";
 import EciLogo from "@/components/EciLogo";
 
 const navigationItems = [
@@ -47,15 +48,15 @@ export function AppSidebar() {
 
   return (
     <Sidebar className={isCollapsed ? "w-14" : "w-64"} collapsible="icon">
-      <SidebarContent className="bg-gradient-brand text-primary-foreground">
+      <SidebarContent className="bg-gradient-brand text-secondary-foreground">
         {/* Logo Section */}
-        <div className="p-4 border-b border-primary-foreground/20">
+        <div className="p-4 border-b border-primary-foreground/20 bg-white">
           <div className="flex items-center gap-3">
-            <EciLogo />
+           <img src={logo} alt="Elite Career Initiative Logo" width={40}/>
             {!isCollapsed && (
               <div>
                 <h2 className="font-semibold text-lg">ECI Dashboard</h2>
-                <p className="text-sm text-primary-foreground/80">Admin Panel</p>
+                <p className="text-sm text-secondary-foreground/80">Admin Panel</p>
               </div>
             )}
           </div>
@@ -92,9 +93,9 @@ export function AppSidebar() {
 
         {/* User Profile Section */}
         {!isCollapsed && (
-          <div className="mt-auto p-4 border-t border-primary-foreground/20">
+          <div className="mt-auto p-4 border-t border-primary-foreground/20 bg-gradient-brand">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-primary-foreground/20 rounded-full flex items-center justify-center">
+              <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
                 <Users className="h-4 w-4" />
               </div>
               <div className="flex-1 min-w-0">
