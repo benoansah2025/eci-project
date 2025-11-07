@@ -61,7 +61,7 @@ const GetInvolved = () => {
         "Professional network access"
       ],
       cta: "Apply Now",
-      highlight: "New cohort starts monthly"
+      highlight: "New cohort starts quarterly"
     },
     {
       title: "Industry Professionals",
@@ -74,7 +74,7 @@ const GetInvolved = () => {
         "Professional recognition"
       ],
       cta: "Become a Mentor",
-      highlight: "10 hours per week commitment"
+      highlight: "3 hours per week commitment"
     },
     {
       title: "Companies & Organizations",

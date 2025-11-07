@@ -24,23 +24,28 @@ const About = () => {
   const organizationalPillars = [
     {
       icon: <Award className="w-8 h-8" />,
-      title: "Excellence",
-      description: "We strive for the highest standards in all our programs and services, ensuring quality outcomes for every participant."
+      title: "Empowerment",
+      description: "We believe in empowering young individuals to take control of their career growth."
     },
     {
       icon: <Users className="w-8 h-8" />,
-      title: "Inclusivity",
-      description: "We welcome students from all backgrounds and provide equal opportunities for growth and development."
+      title: "Commitment  ",
+      description: "We remain committed to our mission, vision, and goals."
     },
     {
       icon: <Lightbulb className="w-8 h-8" />,
-      title: "Innovation",
-      description: "We continuously evolve our methods and embrace new technologies to better serve Ghana's youth."
+      title: "Collaboration  ",
+      description: "We partner with high schools, universities, and organizations to maximize our reach and impact."
     },
     {
       icon: <HandHeart className="w-8 h-8" />,
-      title: "Impact",
-      description: "We focus on creating measurable, lasting change in the lives of young Ghanaians and their communities."
+      title: "Integrity ",
+      description: " We operate with honesty, transparency, and professionalism."
+    },
+     {
+      icon: <HandHeart className="w-8 h-8" />,
+      title: "Inclusivity",
+      description: " We serve students from diverse backgrounds and communities"
     }
   ];
 
@@ -136,10 +141,7 @@ const About = () => {
             </CardHeader>
             <CardContent>
               <p className="text-lg text-foreground leading-relaxed">
-                To empower Ghanaian students and young professionals with the skills, resources, and networks 
-                needed to successfully transition from academic life into meaningful careers. We provide comprehensive 
-                career development programs, mentorship opportunities, and industry connections that prepare our 
-                participants for the challenges and opportunities of the modern workplace.
+                To empower teens and university students through strategic career guidance and skill development, equipping them with knowledge, skills and confidence to achieve their career goals.
               </p>
             </CardContent>
           </Card>
@@ -153,17 +155,14 @@ const About = () => {
             </CardHeader>
             <CardContent>
               <p className="text-lg text-foreground leading-relaxed">
-                To become the leading career development platform in West Africa, known for transforming lives 
-                and strengthening the regional economy through youth empowerment. We envision a future where 
-                every young Ghanaian has access to quality career guidance, relevant skills training, and 
-                meaningful employment opportunities that align with their passions and potential.
+                To become the leading career development platform in Africa, equipping students with the skills and knowledge required for career success.
               </p>
             </CardContent>
           </Card>
         </div>
 
         {/* Our Story */}
-        <Card className="mb-16">
+        {/* <Card className="mb-16">
           <CardHeader>
             <CardTitle className="flex items-center gap-3">
               <Building className="w-8 h-8 text-primary" />
@@ -194,9 +193,9 @@ const About = () => {
               </p>
             </div>
           </CardContent>
-        </Card>
+        </Card> */}
 
-        {/* Achievements */}
+        {/* Achievements
         <div className="mb-16 scroll-mt-40" id ="impact-section">
           <h2 className="text-3xl font-bold text-center mb-8">Our Impact</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -210,7 +209,7 @@ const About = () => {
               </Card>
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* Organizational Pillars */}
         <div className="mb-16">
@@ -240,7 +239,7 @@ const About = () => {
           </div>
         </div>
 
-        {/* 5-Year Roadmap */}
+        {/* 5-Year Roadmap
         <div className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-foreground mb-4 flex items-center justify-center gap-3">
@@ -281,7 +280,7 @@ const About = () => {
               </Card>
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* Call to Action */}
         <Card className="bg-gradient-brand text-primary-foreground">

@@ -51,13 +51,13 @@ const Contact = () => {
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email Us",
-      details: "info@elitecareerinitiative.gh",
+      details: "elitecareerinitiative@gmail.com",
       description: "Send us an email anytime"
     },
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Call Us", 
-      details: "+233 24 123 4567",
+      details: "+233 (0) 594 084 031",
       description: "Mon-Fri from 8am to 6pm"
     },
     {
@@ -258,7 +258,7 @@ const Contact = () => {
                     <div>
                       <h3 className="font-semibold text-foreground">{info.title}</h3>
                       <p className="text-foreground font-medium">{info.details}</p>
-                      <p className="text-sm text-muted-foreground">{info.description}</p>
+                      {/* <p className="text-sm text-muted-foreground">{info.description}</p> */}
                     </div>
                   </div>
                 ))}
@@ -280,7 +280,7 @@ const Contact = () => {
                 <Button 
                   variant="hero" 
                   className="w-full" 
-                  onClick={() => window.open("https://wa.me/23324123456", "_blank")}
+                  onClick={() => window.open("https://wa.me/2330594084031", "_blank")}
                   aria-label="Contact us on WhatsApp"
                 >
                   <MessageSquare className="w-4 h-4 mr-2" />
@@ -345,20 +345,20 @@ const Contact = () => {
           </Card>
 
           {/* Location & Map Section */}
-          <Card className="mb-16">
+          {/* <Card className="mb-16">
           {/* <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <MapPin className="w-6 h-6" />
               Find Us
             </CardTitle>
           </CardHeader> */}
-          <CardContent>
+          {/* <CardContent>
             <GoogleMap />
           </CardContent>
-          </Card>
+          </Card> */} 
 
           {/* Quick Response Times */}
-          <Card>
+          {/* <Card>
             <CardContent className="py-8">
               <div className="text-center">
                 <h2 className="text-2xl font-semibold mb-4">Response Times</h2>
@@ -378,7 +378,7 @@ const Contact = () => {
                 </div>
               </div>
             </CardContent>
-          </Card>
+          </Card> */}
         </div>
       </main>
 

@@ -14,8 +14,7 @@ const Footer = () => {
                 {/* <h3 className="text-lg font-semibold">Elite Career Initiative</h3> */}
                 <p className="text-xlg font-bold text-primary flex space-x-5">Empowering Ghana's Future</p>
                 <p className="text-primary space-x-5 mb-4 max-w-md">
-              Bridging the gap between education and employment through comprehensive 
-              career development programs, mentorship, and professional opportunities.
+              Bridging the gap between traditional education(classroom) and employment (workplace) through personalized coaching, career development trainings, workshops, and resources materials.
             </p>
               </div>
             </div>
@@ -70,15 +69,15 @@ const Footer = () => {
     <li className="flex items-center">
       <span role="img" aria-label="Email" className="text-lg">📧</span>
       <a
-        href="mailto:info@elitecareergh.org"
+        href="mailto:elitecareerinitiative@gmail.com"
         className="ml-2 hover:text-secondary transition-colors"
       >
-        info@elitecareergh.org
+        elitecareerinitiative@gmail.com
       </a>
     </li>
     <li className="flex items-center ">
       <span role="img" aria-label="Phone" className="text-lg">📱</span>
-      <span className="ml-2 hover:text-secondary transition-colors">+233 XX XXX XXXX</span>
+      <span className="ml-2 hover:text-secondary transition-colors">+233 059 408 4031</span>
     </li>
     <li className="flex items-center">
       <span role="img" aria-label="Location" className="text-lg">📍</span>

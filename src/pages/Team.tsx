@@ -182,19 +182,19 @@ const Team = () => {
         </div> */}
 
         <Tabs defaultValue="ceo" className="w-full">
-          <TabsList className="grid w-full grid-cols-4 mb-8">
+          <TabsList className="grid w-full grid-cols-2 mb-8">
             <TabsTrigger value="ceo" className="flex items-center gap-2 data-[state=active]:bg-gradient-hero data-[state=active]:text-primary-foreground ">
               <Award className="w-4 h-4" /> CEO
             </TabsTrigger>
             <TabsTrigger value="board" className="flex items-center gap-2 data-[state=active]:bg-gradient-hero data-[state=active]:text-primary-foreground">
               <Building2 className="w-4 h-4" /> Board
             </TabsTrigger>
-            <TabsTrigger value="core" className="flex items-center gap-2 data-[state=active]:bg-gradient-hero data-[state=active]:text-primary-foreground">
+            {/* <TabsTrigger value="core" className="flex items-center gap-2 data-[state=active]:bg-gradient-hero data-[state=active]:text-primary-foreground">
               <Users className="w-4 h-4 " /> Core Team
             </TabsTrigger>
             <TabsTrigger value="coordinators" className="flex items-center gap-2 data-[state=active]:bg-gradient-hero data-[state=active]:text-primary-foreground">
               <Users className="w-4 h-4" /> Coordinators
-            </TabsTrigger>
+            </TabsTrigger> */}
           </TabsList>
 
           {/* CEO */}
@@ -273,8 +273,8 @@ const Team = () => {
               ))}
             </div>
           </TabsContent>
-
-          {/* Core Team */}
+</Tabs>
+          {/* Core Team
           <TabsContent value="core">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {coreTeam.map((member, index) => (
@@ -294,10 +294,10 @@ const Team = () => {
                 </Card>
               ))}
             </div>
-          </TabsContent>
+          </TabsContent> */}
 
           {/* Coordinators */}
-          <TabsContent value="coordinators">
+          {/* <TabsContent value="coordinators">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {programCoordinators.map((coordinator, index) => (
                 <Card key={index} className="hover:shadow-elegant transition-shadow">
@@ -329,10 +329,10 @@ const Team = () => {
               ))}
             </div>
           </TabsContent>
-        </Tabs>
+          </Tabs>
 
         {/* Stats */}
-        <Card className="mt-16">
+        {/* <Card className="mt-16">
           <CardHeader>
             <CardTitle className="text-center">Team & Experiences</CardTitle>
           </CardHeader>
@@ -356,7 +356,7 @@ const Team = () => {
               </div>
             </div>
           </CardContent>
-        </Card>
+        </Card> */}
 
         {/* CTA */}
         <Card className="mt-16 bg-gradient-brand text-primary-foreground">

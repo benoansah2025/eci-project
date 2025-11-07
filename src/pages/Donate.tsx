@@ -151,8 +151,9 @@ const location = useLocation();
       <Header />
       <Hero />
       <main className="container mx-auto px-4 pt-20 pb-12">
-         <p className="text-lg md:text-3xl text-primary  mb-8 max-w-1xl">
-            Help us bridge the gap between education and employment in Ghana. Your contribution makes a lasting impact.
+         <p className="text-lg md:text-3xl text-primary mb-8 max-w-1xl">
+            Help us bridge the gap between education and employment in Ghana.
+            <br />Your contribution makes a lasting impact.
           </p>
         {/* <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
@@ -163,7 +164,7 @@ const location = useLocation();
           </p>
         </div> */}
 
-        {/* Impact Statistics */}
+        {/* Impact Statistics
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12" id="donate-section">
           {impactStats.map((stat, index) => (
             <Card key={index} className="text-center">
@@ -177,26 +178,26 @@ const location = useLocation();
               </CardContent>
             </Card>
           ))}
-        </div>
+        </div> */}
 
-        <Tabs defaultValue="donate" className="w-full">
+        {/* <Tabs defaultValue="donate" className="w-full">
           <TabsList className="grid w-full grid-cols-2 mb-8">
             <TabsTrigger value="donate" aria-label="Make a Donation">Donate Now</TabsTrigger>
             <TabsTrigger value="partner" aria-label="Partnership Opportunities">Partnership</TabsTrigger>
-          </TabsList>
+          </TabsList> */}
 
           {/* Donation Tab */}
-          <TabsContent value="donate" className="space-y-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* <TabsContent value="donate" className="space-y-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8"> */}
               {/* Donation Form */}
-              <Card>
+              {/* <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <Heart className="w-6 h-6 text-primary" />
                     Make a Donation
                   </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-6">
+                </CardHeader> */}
+                {/* <CardContent className="space-y-6">
                   <div>
                     <h3 className="font-semibold mb-4">Select Amount (GH₵)</h3>
                     <div className="grid grid-cols-2 gap-3">
@@ -214,8 +215,8 @@ const location = useLocation();
                         </Button>
                       ))}
                     </div>
-                  </div>
-
+                  </div> */}
+{/* 
                   <div className="space-y-2">
                     <Label htmlFor="customAmount">Or Enter Custom Amount</Label>
                     <Input
@@ -311,8 +312,8 @@ const location = useLocation();
                             maxLength={19}
                           />
                         </div>
-                        <div className="grid grid-cols-2 gap-4">
-                          <div className="space-y-2">
+                        <div className="grid grid-cols-2 gap-4"> */}
+                          {/* <div className="space-y-2">
                             <Label htmlFor="expiry">Expiry Date</Label>
                             <Input
                               id="expiry"
@@ -337,9 +338,9 @@ const location = useLocation();
                         </div>
                       </div>
                     )}
-                  </div>
+                  </div> */}
 
-                  <Button 
+                  {/* <Button 
                     className="w-full" 
                     size="lg"
                     onClick={handleDonation}
@@ -355,10 +356,10 @@ const location = useLocation();
                     </div>
                   </div>
                 </CardContent>
-              </Card>
+              </Card> */}
 
               {/* Donation Progress */}
-              <Card>
+              {/* <Card>
                 <CardHeader>
                   <CardTitle>Current Campaigns</CardTitle>
                 </CardHeader>
@@ -367,8 +368,8 @@ const location = useLocation();
                     <div className="flex justify-between items-center mb-2">
                       <span className="font-semibold">Scholarship Fund 2024</span>
                       <span className="text-sm text-muted-foreground">73%</span>
-                    </div>
-                    <Progress value={73} className="mb-2" />
+                    </div> */}
+                    {/* <Progress value={73} className="mb-2" />
                     <div className="flex justify-between text-sm text-muted-foreground">
                       <span>GH₵36,500 raised</span>
                       <span>GH₵50,000 goal</span>
@@ -385,8 +386,8 @@ const location = useLocation();
                       <span>GH₵13,500 raised</span>
                       <span>GH₵30,000 goal</span>
                     </div>
-                  </div>
-
+                  </div> */}
+{/* 
                   <div>
                     <div className="flex justify-between items-center mb-2">
                       <span className="font-semibold">Skills Training Workshops</span>
@@ -400,10 +401,10 @@ const location = useLocation();
                   </div>
                 </CardContent>
               </Card>
-            </div>
+            </div> */}
 
             {/* Other Ways to Give */}
-            <Card>
+            {/* <Card>
               <CardHeader>
                 <CardTitle>Other Ways to Support Us</CardTitle>
               </CardHeader>
@@ -414,8 +415,8 @@ const location = useLocation();
                     <h3 className="font-semibold mb-2">Volunteer Your Time</h3>
                     <p className="text-sm text-muted-foreground mb-3">Share your expertise as a mentor or workshop facilitator</p>
                     <Button variant="outline" size="sm">Learn More</Button>
-                  </div>
-                  <div className="text-center p-4 border rounded-lg">
+                  </div> */}
+                  {/* <div className="text-center p-4 border rounded-lg">
                     <Building className="w-8 h-8 text-primary mx-auto mb-3" />
                     <h3 className="font-semibold mb-2">Corporate Partnership</h3>
                     <p className="text-sm text-muted-foreground mb-3">Partner with us for internships and job opportunities</p>
@@ -430,12 +431,12 @@ const location = useLocation();
                 </div>
               </CardContent>
             </Card>
-          </TabsContent>
+          </TabsContent> */}
 
           {/* Partnership Tab */}
-          <TabsContent value="partner" className="space-y-8">
+          {/* <TabsContent value="partner" className="space-y-8"> */}
             {/* Sponsorship Tiers */}
-            <div>
+            {/* <div>
               <h2 className="text-3xl font-bold text-center mb-8">Partnership Opportunities</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {sponsorshipTiers.map((tier, index) => (
@@ -477,10 +478,10 @@ const location = useLocation();
                   </Card>
                 ))}
               </div>
-            </div>
+            </div> */}
 
             {/* Current Partners */}
-            <Card>
+            {/* <Card>
               <CardHeader>
                 <CardTitle>Our Current Partners</CardTitle>
               </CardHeader>
@@ -497,7 +498,7 @@ const location = useLocation();
                   ))}
                 </div>
               </CardContent>
-            </Card>
+            </Card> */}
 
             {/* Partnership Benefits */}
             <Card>
@@ -510,53 +511,68 @@ const location = useLocation();
                     <div className="flex gap-3">
                       <CheckCircle className="w-5 h-5 text-primary mt-1" />
                       <div>
-                        <h3 className="font-semibold">Access to Top Talent</h3>
-                        <p className="text-sm text-muted-foreground">Connect with Ghana's brightest young professionals</p>
+                        <h3 className="font-semibold">Align with youth empowerment, education, and nation-building goals</h3>
+                        {/* <p className="text-sm text-muted-foreground">Connect with Ghana's brightest young professionals</p> */}
                       </div>
                     </div>
                     <div className="flex gap-3">
                       <CheckCircle className="w-5 h-5 text-primary mt-1" />
                       <div>
-                        <h3 className="font-semibold">Brand Visibility</h3>
-                        <p className="text-sm text-muted-foreground">Reach thousands of students and professionals</p>
+                        <h3 className="font-semibold">⁠Enjoy positive public relations  and enhanced goodwill by supporting a high-impact cause</h3>
+                        {/* <p className="text-sm text-muted-foreground">Reach thousands of students and professionals</p> */}
                       </div>
                     </div>
                     <div className="flex gap-3">
                       <CheckCircle className="w-5 h-5 text-primary mt-1" />
                       <div>
-                        <h3 className="font-semibold">CSR Impact</h3>
-                        <p className="text-sm text-muted-foreground">Make a measurable difference in youth development</p>
+                        <h3 className="font-semibold">⁠Engage directly with future customers, clients, and potential hires/employees</h3>
+                        {/* <p className="text-sm text-muted-foreground">Make a measurable difference in youth development</p> */}
                       </div>
                     </div>
+                    <div className="flex gap-3">
+                      <CheckCircle className="w-5 h-5 text-primary mt-1" />
+                      <div>
+                        <h3 className="font-semibold">Be part of a sustainable social impact movement shaping Ghana’s future workforce</h3>
+                        {/* <p className="text-sm text-muted-foreground">Connect with other leading organizations</p> */}
+                      </div>
+                    </div>
+                   
                   </div>
                   <div className="space-y-4">
-                    <div className="flex gap-3">
+                     <div className="flex gap-3">
                       <CheckCircle className="w-5 h-5 text-primary mt-1" />
                       <div>
-                        <h3 className="font-semibold">Networking Opportunities</h3>
-                        <p className="text-sm text-muted-foreground">Connect with other leading organizations</p>
+                        <h3 className="font-semibold">⁠Align with CSR priorities in youth empowerment, education, and nation-building.</h3>
+                        {/* <p className="text-sm text-muted-foreground">Eligible for corporate tax deductions</p> */}
                       </div>
                     </div>
                     <div className="flex gap-3">
                       <CheckCircle className="w-5 h-5 text-primary mt-1" />
                       <div>
-                        <h3 className="font-semibold">Tax Benefits</h3>
-                        <p className="text-sm text-muted-foreground">Eligible for corporate tax deductions</p>
+                        <h3 className="font-semibold">Gain strong brand visibility through event branding, media coverage, and digital campaigns.</h3>
+                        {/* <p className="text-sm text-muted-foreground">Tailor initiatives to your business needs</p> */}
                       </div>
                     </div>
                     <div className="flex gap-3">
                       <CheckCircle className="w-5 h-5 text-primary mt-1" />
                       <div>
-                        <h3 className="font-semibold">Customized Programs</h3>
-                        <p className="text-sm text-muted-foreground">Tailor initiatives to your business needs</p>
+                        <h3 className="font-semibold">⁠Enjoy positive public recognition as a Lead Sponsor & Career Development Partner.</h3>
+                        {/* <p className="text-sm text-muted-foreground">Tailor initiatives to your business needs</p> */}
+                      </div>
+                    </div>
+                    <div className="flex gap-3">
+                      <CheckCircle className="w-5 h-5 text-primary mt-1" />
+                      <div>
+                        <h3 className="font-semibold">Contribute to a sustainable solution addressing youth unemployment in Ghana.</h3>
+                        {/* <p className="text-sm text-muted-foreground">Tailor initiatives to your business needs</p> */}
                       </div>
                     </div>
                   </div>
                 </div>
               </CardContent>
             </Card>
-          </TabsContent>
-        </Tabs>
+          {/* </TabsContent> */}
+        {/* </Tabs> */}
       </main>
 
       <Footer />

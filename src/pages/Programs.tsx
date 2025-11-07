@@ -10,7 +10,7 @@ import { format } from "date-fns";
 import Hero from "@/components/hero_programs";
 import { useLocation } from "react-router-dom";
 
-const Programs = () => {
+const Programs = (props) => {
   const [selectedEvent, setSelectedEvent] = useState<any>(null);
   const [showRegistration, setShowRegistration] = useState(false);
 const location = useLocation(); 
@@ -29,111 +29,111 @@ const location = useLocation();
   const programs = [
     {
       id: 1,
-      title: "Tech Skills Bootcamp",
-      description: "Intensive 12-week program focusing on web development, data analysis, and digital marketing skills.",
-      duration: "12 weeks",
-      level: "Beginner to Intermediate",
-      category: "Technology",
-      features: ["Web Development", "Data Analysis", "Digital Marketing", "Portfolio Building"],
+      title: "One-on-One / Group Career Coaching",
+      description: "Personalized sessions to help students identify their strengths, interests, and career goals.",
+      // duration: "12 weeks",
+      // level: "Beginner to Intermediate",
+      // category: "Technology",
+      // features: ["Web Development", "Data Analysis", "Digital Marketing", "Portfolio Building"],
       color: "bg-gradient-primary"
     },
     {
       id: 2,
-      title: "Entrepreneurship Academy",
-      description: "Comprehensive program for aspiring entrepreneurs to develop business acumen and leadership skills.",
-      duration: "8 weeks",
-      level: "All Levels",
-      category: "Business",
-      features: ["Business Planning", "Financial Literacy", "Market Research", "Pitch Development"],
+      title: "Skills Development Workshops and Webinars",
+      description: "Sessions on diverse career-related topics like resume writing, technical skills, interview skills, networking, and career exploration",
+      // duration: "8 weeks",
+      // level: "All Levels",
+      // category: "Business",
+      // features: ["Business Planning", "Financial Literacy", "Market Research", "Pitch Development"],
       color: "bg-gradient-secondary"
     },
     {
       id: 3,
-      title: "Career Transition Program",
-      description: "Specialized program for career changers and recent graduates entering the job market.",
-      duration: "6 weeks",
-      level: "All Levels",
-      category: "Career Development",
-      features: ["Resume Building", "Interview Skills", "Networking", "Industry Insights"],
+      title: "Mentorship Programs",
+      description: "Connecting students with professionals and experts in their desired fields.",
+      // duration: "6 weeks",
+      // level: "All Levels",
+      // category: "Career Development",
+      // features: ["Resume Building", "Interview Skills", "Networking", "Industry Insights"],
       color: "bg-gradient-accent"
     },
     {
       id: 4,
-      title: "Mentorship & Leadership",
-      description: "A dynamic program designed to connect participants with experienced mentors while cultivating essential leadership skills for career growth and empowerment.",
-      duration: "12 weeks",
-      level: "Intermediate to Advanced",
-      category: "Career Empowerment",
-      features: ["One-on-One Mentorship", "Leadership Workshops", "Personal Branding", "Strategic Career Planning"],
-      color: "bg-gradient-accent"
-    },
-    {
-      id: 5,
-      title: "Internship and Job Shadowing Opportunities",
-      description: "Hands-on program offering real-world exposure through internships and job shadowing, bridging the gap between academic learning and professional practice.",
-      duration: "8 weeks",
-      level: "All Levels",
-      category: "Career Development",
-      features: ["Workplace Experience", "Professional Networking", "Skill Application", "Industry Mentorship"],
+      title: "Career Fairs/Readiness Bootcamps and Networking Events",
+      description: "Opportunities for students to interact with employers and industry experts.",
+      // duration: "12 weeks",
+      // level: "Intermediate to Advanced",
+      // category: "Career Empowerment",
+      // features: ["One-on-One Mentorship", "Leadership Workshops", "Personal Branding", "Strategic Career Planning"],
       color: "bg-gradient-accent"
     }
+    // {
+    //   id: 5,
+    //   title: "Internship and Job Shadowing Opportunities",
+    //   description: "Hands-on program offering real-world exposure through internships and job shadowing, bridging the gap between academic learning and professional practice.",
+    //   duration: "8 weeks",
+    //   level: "All Levels",
+    //   category: "Career Development",
+    //   features: ["Workplace Experience", "Professional Networking", "Skill Application", "Industry Mentorship"],
+    //   color: "bg-gradient-accent"
+    // }
   ];
 
   // Sample upcoming events data - can be updated from admin dashboard
-  const upcomingEvents = [
-    {
-      id: 1,
-      title: "Web Development Workshop",
-      description: "Learn the fundamentals of HTML, CSS, and JavaScript in this hands-on workshop.",
-      date: new Date(2024, 9, 15), // October 15, 2024
-      time: "10:00 AM - 4:00 PM",
-      location: "ECI Training Center, Accra",
-      type: "Workshop",
-      maxParticipants: 30,
-      currentParticipants: 18,
-      requirements: "Basic computer skills",
-      programId: 1
-    },
-    {
-      id: 2,
-      title: "Business Pitch Competition",
-      description: "Present your business ideas to a panel of investors and industry experts.",
-      date: new Date(2024, 9, 22), // October 22, 2024
-      time: "2:00 PM - 6:00 PM",
-      location: "Ghana Tech Hub, Kumasi",
-      type: "Competition",
-      maxParticipants: 20,
-      currentParticipants: 12,
-      requirements: "Completed business plan",
-      programId: 2
-    },
-    {
-      id: 3,
-      title: "Career Fair & Networking",
-      description: "Connect with potential employers and expand your professional network.",
-      date: new Date(2024, 9, 28), // October 28, 2024
-      time: "9:00 AM - 5:00 PM",
-      location: "University of Ghana, Legon",
-      type: "Networking",
-      maxParticipants: 100,
-      currentParticipants: 67,
-      requirements: "Resume required",
-      programId: 3
-    },
-    {
-      id: 4,
-      title: "Digital Marketing Masterclass",
-      description: "Advanced strategies for social media marketing and content creation.",
-      date: new Date(2024, 10, 5), // November 5, 2024
-      time: "1:00 PM - 5:00 PM",
-      location: "Online Event",
-      type: "Masterclass",
-      maxParticipants: 50,
-      currentParticipants: 23,
-      requirements: "Basic marketing knowledge",
-      programId: 1
-    }
-  ];
+  // const upcomingEvents = [
+  //   {
+  //     id: 1,
+  //     title: "Web Development Workshop",
+  //     description: "Learn the fundamentals of HTML, CSS, and JavaScript in this hands-on workshop.",
+  //     date: new Date(2024, 9, 15), // October 15, 2024
+  //     time: "10:00 AM - 4:00 PM",
+  //     location: "ECI Training Center, Accra",
+  //     type: "Workshop",
+  //     maxParticipants: 30,
+  //     currentParticipants: 18,
+  //     requirements: "Basic computer skills",
+  //     programId: 1
+  //   },
+  //   {
+  //     id: 2,
+  //     title: "Business Pitch Competition",
+  //     description: "Present your business ideas to a panel of investors and industry experts.",
+  //     date: new Date(2024, 9, 22), // October 22, 2024
+  //     time: "2:00 PM - 6:00 PM",
+  //     location: "Ghana Tech Hub, Kumasi",
+  //     type: "Competition",
+  //     maxParticipants: 20,
+  //     currentParticipants: 12,
+  //     requirements: "Completed business plan",
+  //     programId: 2
+  //   },
+  //   {
+  //     id: 3,
+  //     title: "Career Fair & Networking",
+  //     description: "Connect with potential employers and expand your professional network.",
+  //     date: new Date(2024, 9, 28), // October 28, 2024
+  //     time: "9:00 AM - 5:00 PM",
+  //     location: "University of Ghana, Legon",
+  //     type: "Networking",
+  //     maxParticipants: 100,
+  //     currentParticipants: 67,
+  //     requirements: "Resume required",
+  //     programId: 3
+  //   },
+  //   {
+  //     id: 4,
+  //     title: "Digital Marketing Masterclass",
+  //     description: "Advanced strategies for social media marketing and content creation.",
+  //     date: new Date(2024, 10, 5), // November 5, 2024
+  //     time: "1:00 PM - 5:00 PM",
+  //     location: "Online Event",
+  //     type: "Masterclass",
+  //     maxParticipants: 50,
+  //     currentParticipants: 23,
+  //     requirements: "Basic marketing knowledge",
+  //     programId: 1
+  //   }
+  // ];
 
   const handleRegisterClick = (event: any) => {
     setSelectedEvent(event);
@@ -145,26 +145,25 @@ const location = useLocation();
     setSelectedEvent(null);
   };
 
-  const getEventTypeColor = (type: string) => {
-    switch (type.toLowerCase()) {
-      case 'workshop':
-        return 'bg-primary/10 text-primary border-primary/20';
-      case 'competition':
-        return 'bg-secondary/10 text-secondary border-secondary/20';
-      case 'networking':
-        return 'bg-accent/10 text-accent border-accent/20';
-      case 'masterclass':
-        return 'bg-purple-100 text-purple-700 border-purple-200 dark:bg-purple-900/20 dark:text-purple-300 dark:border-purple-800';
-      default:
-        return 'bg-muted text-muted-foreground border-border';
-    }
-  };
+  // const getEventTypeColor = (type: string) => {
+  //   switch (type.toLowerCase()) {
+  //     case 'workshop':
+  //       return 'bg-primary/10 text-primary border-primary/20';
+  //     case 'competition':
+  //       return 'bg-secondary/10 text-secondary border-secondary/20';
+  //     case 'networking':
+  //       return 'bg-accent/10 text-accent border-accent/20';
+  //     case 'masterclass':
+  //       return 'bg-purple-100 text-purple-700 border-purple-200 dark:bg-purple-900/20 dark:text-purple-300 dark:border-purple-800';
+  //     default:
+  //       return 'bg-muted text-muted-foreground border-border';
+  //   
 
   return (
-    <div className="min-h-screen bg-gradient-warm">
+    <div className="min-h-screen bg-gradient-warm ">
       <Header />
         <Hero></Hero>
-      <main className="container mx-auto px-4 pt-10 pb-12" >
+      <main className="main-content m-10" >
         {/* Hero Section */}
       
 
@@ -172,12 +171,12 @@ const location = useLocation();
 
           {/* Programs Section */}
           {/* <section className="mb-16"> */}
-          <div className="scroll-mt-40 flex items-center gap-3 mb-8" id="programs-section">
+          <div className="scroll-mt-40 flex justify-center items-center gap-3" id="programs-section">
             <BookOpen className="h-8 w-8 text-primary" />
-            <h2 className="text-3xl font-bold text-foreground">Our Programs</h2>
+            <h2 className="text-3xl font-bold text-foreground items-center ">Our Services</h2>
           </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
             {programs.map((program) => (
               <Card key={program.id} className="hover:shadow-elegant transition-all duration-300 border-border/50">
                 <div className={`h-2 ${program.color} rounded-t-lg`} />
@@ -185,10 +184,10 @@ const location = useLocation();
                   <div className="flex items-start justify-between">
                     <div>
                       <CardTitle className="text-xl text-foreground">{program.title}</CardTitle>
-                      <CardDescription className="mt-2">{program.description}</CardDescription>
+                      <CardDescription className="mt-4">{program.description}</CardDescription>
                     </div>
                   </div>
-                  <div className="flex flex-wrap gap-2 mt-4">
+                  {/* <div className="flex flex-wrap gap-2 mt-4">
                     <Badge variant="secondary" className="text-xs">
                       <Clock className="w-3 h-3 mr-1" />
                       {program.duration}
@@ -200,21 +199,21 @@ const location = useLocation();
                     <Badge variant="default" className="text-xs">
                       {program.category}
                     </Badge>
-                  </div>
+                  </div> */}
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-3">
-                    <h4 className="font-semibold text-foreground">Key Features:</h4>
-                    <ul className="space-y-1">
+                    {/* <h4 className="font-semibold text-foreground">Key Features:</h4> */}
+                    {/* <ul className="space-y-1">
                       {program.features.map((feature, index) => (
                         <li key={index} className="flex items-center text-sm text-muted-foreground">
                           <span className="w-1.5 h-1.5 bg-primary rounded-full mr-2" />
                           {feature}
                         </li>
                       ))}
-                    </ul>
-                    <Button variant="outline" className="w-full mt-4">
-                      Learn More
+                    </ul> */}
+                    <Button variant="outline" className=" w-full mt-5">
+                      Register
                     </Button>
                   </div>
                 </CardContent>
@@ -224,14 +223,14 @@ const location = useLocation();
         {/* </section> */}
 
           {/* Upcoming Events Section */}
-          <section className="space-y-6 mt-10">
-          <div className="flex items-center gap-3 mb-8">
+          {/* <section className="space-y-6 mt-10"> */}
+          {/* <div className="flex items-center gap-3 mb-8">
             <Calendar className="h-8 w-8 text-primary" />
             
             <h2 className="text-3xl font-bold text-foreground">Upcoming Events</h2>
-          </div>
+          </div> */}
           
-          <div className="grid md:grid-cols-2 gap-6">
+          {/* <div className="grid md:grid-cols-2 gap-6">
             {upcomingEvents.map((event) => (
               <Card key={event.id} className="hover:shadow-elegant transition-all duration-300 border-border/50">
                 <CardHeader>
@@ -249,8 +248,8 @@ const location = useLocation();
                       <CardDescription className="mt-2">{event.description}</CardDescription>
                     </div>
                   </div>
-                </CardHeader>
-                <CardContent>
+                </CardHeader> */}
+                {/* <CardContent>
                   <div className="space-y-3">
                     <div className="flex items-center text-sm text-muted-foreground">
                       <Calendar className="w-4 h-4 mr-2 text-primary" />
@@ -289,11 +288,11 @@ const location = useLocation();
                       </Button>
                     </div>
                   </div>
-                </CardContent>
-              </Card>
+                </CardContent> */}
+              {/* </Card>
             ))}
-          </div>
-          </section>
+          </div> */}
+          {/* </section> */}
         {/* </div> */}
       </main>
 

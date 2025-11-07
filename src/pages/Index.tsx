@@ -27,7 +27,7 @@ const Index = () => {
         {/* <Hero /> */}
         <Programs />
         <HowItWorks />
-        <Impact />
+        {/* <Impact /> */}
         <GetInvolved />
         <Newsletter />
       </main>

@@ -50,19 +50,19 @@ const Header = () => {
           >
             Team
           </a>
-          <a 
+          {/* <a 
             href="/resources" 
             className="text-primary hover:text-secondary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm px-2 py-1"
             aria-label="Access our resource library"
           >
             Resources
-          </a>
+          </a> */}
           <a 
-            href="#programs" 
+            href="/programs" 
             className="text-primary hover:text-secondary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm px-2 py-1"
             aria-label="View our career development programs"
           >
-            Programs
+           Services
           </a>
           <a 
             href="/contact" 
@@ -111,19 +111,19 @@ const Header = () => {
                 >
                   Team
                 </a>
-                <a 
+                {/* <a 
                   href="/resources" 
                   className="text-primary hover:text-secondary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm px-2 py-1 text-lg"
                   aria-label="Access our resource library"
                 >
                   Resources
-                </a>
+                </a> */}
                 <a 
-                  href="#programs" 
+                  href="/programs" 
                   className="text-primary hover:text-secondary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm px-2 py-1 text-lg"
                   aria-label="View our career development programs"
                 >
-                  Programs
+                  Services
                 </a>
                 <a 
                   href="/contact" 
@@ -141,21 +141,21 @@ const Header = () => {
                 </a>
                 <div className="flex flex-col space-y-3 pt-4 border-t">
                     <Button
-            variant="hero" size="sm" aria-label="Sign in to your account"
-            onClick={() => navigate("/auth/sign-in")}
+            variant="hero" size="sm" aria-label="Partner with us"
+            onClick={() => navigate("/donate")}
             className="justify-start"
           >
            
-            Sign In
+            Partner With Us
           </Button>
-          <Button
+          {/* <Button
             variant= "hero" size="sm" aria-label="Join Elite Career Initiative"
             onClick={() => navigate("/auth/sign-up")}
             className="justify-start"
           >
           
             Join ECI
-          </Button>
+          </Button> */}
                 </div>
               </nav>
             </SheetContent>
@@ -164,21 +164,21 @@ const Header = () => {
         
         <div className="hidden md:flex items-center space-x-3">
          <Button
-            variant="hero" size="sm" aria-label="Sign in to your account"
-            onClick={() => navigate("/auth/sign-in")}
+            variant="hero" size="sm" aria-label="Partner with us"
+            onClick={() => navigate("/donate")}
             className="justify-start"
           >
           
-            Sign In
+           Partner With Us
           </Button>
-          <Button
+          {/* <Button
             variant= "hero" size="sm" aria-label="Join Elite Career Initiative"
             onClick={() => navigate("/auth/sign-up")}
             className="justify-start"
           >
          
             Join ECI
-          </Button>
+          </Button> */}
         </div>
       </div>
     </header>
