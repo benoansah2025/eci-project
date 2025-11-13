@@ -16,14 +16,17 @@ const Programs = (props) => {
 const location = useLocation(); 
  // ✅ Scroll to section if hash is present
   useEffect(() => {
-    if (location.hash) {
-      const id = location.hash.replace("#", ""); // "programs-section"
-      const el = document.getElementById(id);
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
-      }
+  const interval = setInterval(() => {
+    const iframe = document.querySelector("iframe");
+    if (iframe && iframe.src.includes("formResponse")) {
+      // Close the form and redirect
+      setShowRegistration(false);
+      window.location.href = "/"; // Redirect to home
+      clearInterval(interval);
     }
-  }, [location]);
+  }, 1000);
+  return () => clearInterval(interval);
+}, [showRegistration]);
 
   // Sample programs data - can be updated from admin dashboard
   const programs = [
@@ -136,7 +139,7 @@ const location = useLocation();
   // ];
 
   const handleRegisterClick = (event: any) => {
-    setSelectedEvent(event);
+    // setSelectedEvent(event);
     setShowRegistration(true);
   };
 
@@ -212,7 +215,9 @@ const location = useLocation();
                         </li>
                       ))}
                     </ul> */}
-                    <Button variant="outline" className=" w-full mt-5">
+                    <Button variant="outline" className=" w-full mt-5" onClick={()=>{
+                      setShowRegistration(true);
+                    }}>
                       Register
                     </Button>
                   </div>
@@ -298,14 +303,33 @@ const location = useLocation();
 
       <Footer />
 
-      {/* Event Registration Modal */}
-      {showRegistration && selectedEvent && (
-        <EventRegistrationForm
-          event={selectedEvent}
-          isOpen={showRegistration}
-          onClose={handleRegistrationClose}
-        />
-      )}
+      {showRegistration && (
+  <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
+    <div className="bg-white rounded-2xl shadow-lg w-[90%] md:w-[60%] h-[80vh] p-4 relative">
+      {/* Close Button */}
+      <button
+        className="absolute top-2 right-4 text-gray-600 hover:text-black text-2xl font-bold"
+        onClick={() => {
+          setShowRegistration(false);
+        }}
+      >
+        ✕
+      </button>
+
+      {/* Embed Google Form */}
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLSdsffL4_adTwW6XPSaKm30hPuLWlceSj2Ko3KxAj2yjar7wAg/viewform"
+        width="100%"
+        height="100%"
+        frameBorder="0"
+        marginHeight={0}
+        marginWidth={0}
+      >
+        Loading…
+      </iframe>
+    </div>
+  </div>
+)}
     </div>
   );
 };

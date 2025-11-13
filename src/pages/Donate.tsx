@@ -1,20 +1,20 @@
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Progress } from "@/components/ui/progress";
+// import { Badge } from "@/components/ui/badge";
+// import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+// import { Progress } from "@/components/ui/progress";
 import { Heart, Users, Award, Shield, CheckCircle, Building, Handshake, Star, Smartphone, CreditCard } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useToast } from "@/hooks/use-toast";
 import Hero from "@/components/hero_support";
-import { useLocation } from "react-router-dom";
+import { useLocation,useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+// import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+// import { Label } from "@/components/ui/label";
+// import { Input } from "@/components/ui/input";
+// import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
 
 const Donate = () => {
@@ -30,6 +30,7 @@ const Donate = () => {
   const [lastSubmission, setLastSubmission] = useState<number | null>(null);
 
 const location = useLocation();
+const navigate = useNavigate();
  useEffect(() => {
     if (location.hash) {
       const id = location.hash.replace("#", ""); // "programs-section"
@@ -573,6 +574,18 @@ const location = useLocation();
             </Card>
           {/* </TabsContent> */}
         {/* </Tabs> */}
+              <div style={{
+                display:"flex",
+                justifyContent:"center",
+                width:"100%"
+              }}>
+<Button variant="hero" className="mt-10 bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary/90 transition" onClick={() => {
+  navigate("/contact");
+}}>
+              Contact Us to Partner
+        </Button>
+              </div>
+        
       </main>
 
       <Footer />
