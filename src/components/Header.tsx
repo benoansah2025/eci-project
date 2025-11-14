@@ -29,14 +29,45 @@ const Header = () => {
         </div>
         
         <nav className="hidden md:flex items-center space-x-4" role="navigation" aria-label="Main navigation">
-          <a 
+          <Button variant="link" onClick={()=>{
+            navigate('/')
+          }} aria-label="Home page button/link">
+            Home
+          </Button>
+          <Button variant="link" onClick={()=>{
+            navigate('/about')
+          }}aria-label="About page button/link" >
+            About
+          </Button>
+          <Button variant="link" onClick={()=>{
+            navigate('/team')
+          }} aria-label="Team page button/link">
+            Team
+          </Button>
+          <Button variant="link" onClick={()=>{
+            navigate('/programs')
+          }} aria-label="Services page button/link">
+            Services
+          </Button>
+          <Button variant="link" onClick={()=>{
+            navigate('/contact')
+          }} aria-label="Contact page button/link">
+            Contact
+          </Button>
+          <Button variant="link" onClick={()=>{
+            navigate('/donate')
+          }} aria-label="Support Us page button/link">
+            Support Us
+          </Button>
+          
+          {/* <a 
             href="/" 
             className="text-primary hover:text-secondary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm px-2 py-1"
             aria-label="Home page"
           >
             Home
-          </a>
-          <a 
+          </a> */}
+          {/* <a 
             href="/about" 
             className="text-primary hover:text-secondary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm px-2 py-1"
             aria-label="Learn about our mission"
@@ -49,7 +80,7 @@ const Header = () => {
             aria-label="Meet our team"
           >
             Team
-          </a>
+          </a> */}
           {/* <a 
             href="/resources" 
             className="text-primary hover:text-secondary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm px-2 py-1"
@@ -57,7 +88,7 @@ const Header = () => {
           >
             Resources
           </a> */}
-          <a 
+          {/* <a 
             href="/programs" 
             className="text-primary hover:text-secondary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm px-2 py-1"
             aria-label="View our career development programs"
@@ -77,7 +108,7 @@ const Header = () => {
             aria-label="Support our mission"
           >
             Support Us
-          </a>
+          </a> */}
         </nav>
         
         {/* Mobile Navigation */}
@@ -90,27 +121,60 @@ const Header = () => {
             </SheetTrigger>
             <SheetContent side="right" className="w-64">
               <nav className="flex flex-col space-y-4 mt-8" role="navigation" aria-label="Mobile navigation">
-                <a 
+                 <Button variant="link" onClick={()=>{
+                  navigate('/')
+                 }} aria-label="Home page button/link">
+                  Home
+                </Button>
+                  <Button variant="link" onClick={()=>{
+                  navigate('/about')
+                 }} aria-label="About page button/link">
+                  About
+                </Button>
+                  <Button variant="link" onClick={()=>{
+                  navigate('/team')
+                 }} aria-label="Team page button/link">
+                  Team
+                </Button>
+                  <Button variant="link" onClick={()=>{
+                  navigate('/programs')
+                 }} aria-label="Services page button/link">
+                  Services
+                </Button>
+                  <Button variant="link" onClick={()=>{
+                  navigate('/contact')
+                 }} aria-label="Contact page button/link">
+                  Contact
+                </Button>
+                  <Button variant="link" onClick={()=>{
+                  navigate('/donate')
+                 }} aria-label="Support Us page button/link">
+                  Support Us
+                </Button>
+                {/* <a 
                   href="/" 
                   className="text-primary hover:text-secondary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm px-2 py-1 text-lg"
                   aria-label="Home page"
                 >
                   Home
-                </a>
-                <a 
+                </a> */}
+                {/* <a 
                   href="/about" 
                   className="text-primary hover:text-secondary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm px-2 py-1 text-lg"
                   aria-label="Learn about our mission"
                 >
                   About
-                </a>
+                </a> */}
+                {/* <Button variant="outline">
+                  About
+                </Button>
                 <a 
                   href="/team" 
                   className="text-primary hover:text-secondary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm px-2 py-1 text-lg"
                   aria-label="Meet our team"
                 >
                   Team
-                </a>
+                </a> */}
                 {/* <a 
                   href="/resources" 
                   className="text-primary hover:text-secondary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm px-2 py-1 text-lg"
@@ -118,7 +182,7 @@ const Header = () => {
                 >
                   Resources
                 </a> */}
-                <a 
+                {/* <a 
                   href="/programs" 
                   className="text-primary hover:text-secondary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm px-2 py-1 text-lg"
                   aria-label="View our career development programs"
@@ -138,7 +202,7 @@ const Header = () => {
                   aria-label="Support our mission"
                 >
                   Support Us
-                </a>
+                </a> */}
                 <div className="flex flex-col space-y-3 pt-4 border-t">
                     <Button
             variant="hero" size="sm" aria-label="Partner with us"

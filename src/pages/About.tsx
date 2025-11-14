@@ -5,19 +5,21 @@ import { Target, Eye, Route, Building, Users, Award, Lightbulb, HandHeart } from
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero_about";
-import { useLocation } from "react-router-dom";
+import { useLocation,useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import { Button } from "@/components/ui/button";
 
 const About = () => {
+  const navigate = useNavigate();
   const location = useLocation(); 
  // ✅ Scroll to section if hash is present
   useEffect(() => {
-    if (location.hash) {
-      const id = location.hash.replace("#", ""); // "programs-section"
-      const el = document.getElementById(id);
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
-      }
+     const el = document.getElementById("top-header");
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    } else {
+      // fallback
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   }, [location]);
 
@@ -115,7 +117,7 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-warm">
+    <div className="min-h-screen bg-gradient-warm" id="top-header">
       <Header />
         <Hero />
       <main className="container mx-auto px-4 pb-12">
@@ -283,19 +285,33 @@ const About = () => {
         </div> */}
 
         {/* Call to Action */}
-        <Card className="bg-gradient-brand text-primary-foreground">
+        <Card className="bg-gradient-brand text-primary-foreground ">
           <CardContent className="p-12 text-center">
             <h2 className="text-3xl font-bold mb-4">Join Our Mission</h2>
             <p className="text-xl mb-8 max-w-3xl mx-auto opacity-90">
               Whether you're a student seeking guidance, a professional wanting to mentor, or an organization 
               looking to make an impact, there's a place for you in the ECI community.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="gap-3 flex justify-center">
+             <Button variant="hero" size="lg" onClick={()=>{
+              navigate("/programs")
+             }}>
+            Join Our Team
+            </Button>
+            <Button variant="hero" size="lg"  onClick={()=>{
+              navigate("/contact")
+             }} >
+              Contact Us
+            </Button>
+            </div>
+           
+
+            {/* <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
-                href="#get-involved" 
-                className="bg-background text-foreground hover:bg-background/90 transition-colors px-8 py-3 rounded-md font-semibold inline-block"
+                href="/programs" 
+                className="border border-background text-background hover:bg-background hover:text-foreground transition-colors px-8 py-3 rounded-md font-semibold inline-block"
               >
-                Get Involved
+              Join Our Team
               </a>
               <a 
                 href="/contact" 
@@ -303,7 +319,7 @@ const About = () => {
               >
                 Contact Us
               </a>
-            </div>
+            </div> */}
           </CardContent>
         </Card>
       </main>

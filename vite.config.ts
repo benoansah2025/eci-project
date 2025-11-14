@@ -11,7 +11,9 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [
     react(),
+    
   ].filter(Boolean),
+  base:'/wp-content/reactpress/apps/eci-project/dist',
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

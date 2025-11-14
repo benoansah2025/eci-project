@@ -7,6 +7,8 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
 import { CardImage } from "@/components/ui/card"
+import {useNavigate,useLocation} from 'react-router-dom'
+import {useEffect} from 'react'
 
 // Import images from assets
 import ceoImage from "@/assets/ceo.jpg"
@@ -27,6 +29,19 @@ import emmanuelImage from "@/assets/man_2.jpg"
 import Hero from "@/components/hero_team"
 
 const Team = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+     const el = document.getElementById("top-header");
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    } else {
+      // fallback
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, [location]);
+
   // CEO
   const ceo = {
     name: "Mary Akua Ahenmah Dadzie",
@@ -167,7 +182,7 @@ const Team = () => {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-warm">
+    <div className="min-h-screen bg-gradient-warm" id="top-header">
       <Header />
          <Hero></Hero>
       <main className="container mx-auto px-4 pt-20 pb-12">
@@ -367,15 +382,14 @@ const Team = () => {
               We're always looking for talented individuals to join our mission.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
-                href="/contact" 
-                className="bg-background text-foreground hover:bg-background/90 transition-colors px-8 py-3 rounded-md font-semibold inline-block"
-              >
-                View Open Positions
-              </a>
+             <Button variant="hero" size="lg" onClick={()=>{
+              navigate('/programs')
+             }}>
+            Join Our Team
+             </Button>
               <a 
                 href="mailto:careers@eci.gh" 
-                className="border border-background text-background hover:bg-background hover:text-foreground transition-colors px-8 py-3 rounded-md font-semibold inline-block"
+                className="border border-background text-background hover:bg-background hover:text-foreground transition-colors px-5 py-2 rounded-md font-semibold inline-block"
               >
                 Send Your CV
               </a>

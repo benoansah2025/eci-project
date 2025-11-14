@@ -38,7 +38,8 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+    
+      <BrowserRouter basename = "/wp-content/reactpress/apps/eci-project/dist"> 
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />

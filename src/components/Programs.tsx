@@ -4,25 +4,26 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 
 const Programs = () => {
+  const pageTitle = "our services";
   const navigate = useNavigate();
-  const location = useLocation();
+  // const location = useLocation();
 
   // Scroll to hash when page loads or route changes
-  useEffect(() => {
-    if (location.hash === "#programs-section") {
-      document.getElementById("programs-section")?.scrollIntoView({ behavior: "smooth" });
-    }
-  }, [location]);
+  // useEffect(() => {
+  //   if (location.hash === "#programs-section") {
+  //     document.getElementById("programs-section")?.scrollIntoView({ behavior: "smooth" });
+  //   }
+  // }, [location]);
 
-  const handleLearnMoreClick = () => {
-    if (location.pathname === "/programs") {
-      // Already on programs page
-      document.getElementById("programs-section")?.scrollIntoView({ behavior: "smooth" });
-    } else {
-      // Navigate with hash
-      navigate("/programs#programs-section");
-    }
-  };
+  // const handleLearnMoreClick = () => {
+  //   if (location.pathname === "/programs") {
+  //     // Already on programs page
+  //    navigate("/programs")
+  //   } else {
+  //     // Navigate with hash
+  //     navigate("/programs#programs-section");
+  //   }
+  // };
 
   const programs = [
     {
@@ -60,7 +61,7 @@ const Programs = () => {
   ];
 
   return (
-    <section id="programs" className="py-20 bg-violet-200 main-content" aria-labelledby="programs-heading">
+    <section className="py-10 bg-violet-200 main-content" aria-labelledby="programs-heading">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 id="programs-heading" className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -108,7 +109,11 @@ const Programs = () => {
                   className="w-full" 
                   variant="outline" 
                   aria-label={`Learn more about ${program.title}`} 
-                  onClick={handleLearnMoreClick}
+                  onClick={()=>{
+                      navigate('/programs');
+                     
+                  }
+                }
                 >
                   Learn More
                 </Button>

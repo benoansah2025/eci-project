@@ -161,15 +161,18 @@ const GetInvolved = () => {
               Support Our Mission
             </h3>
             <p className="text-muted-foreground mb-6">
-              Help us expand our impact and reach more young professionals across Ghana. 
-              Your donation directly funds scholarships, programs, and resources.
+              Help us expand our impact and reach more young professionals across Ghana through donations and user reviews. 
+              Your donation directly funds scholarships, programs, and resources. 
+              Your reviews will help us make the website better to serve you.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="hero" size="lg" onClick={handledonate}>
               Donate Now
               </Button>
-              <Button variant="outline" size="lg"  onClick={handleImpact}>
-                Learn About Impact
+              <Button variant="hero" size="lg"  onClick={()=>{
+                
+              }}>
+                Share a Review
               </Button>
             </div>
           </div>

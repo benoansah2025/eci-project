@@ -31,15 +31,15 @@ const Donate = () => {
 
 const location = useLocation();
 const navigate = useNavigate();
- useEffect(() => {
-    if (location.hash) {
-      const id = location.hash.replace("#", ""); // "programs-section"
-      const el = document.getElementById(id);
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-  }, [location]);
+    useEffect(() => {
+         const el = document.getElementById("top-header");
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+        } else {
+          // fallback
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+   [location]});
   const donationAmounts = [25, 50, 100, 250, 500, 1000];
   
   const handleDonation = () => {
@@ -148,7 +148,7 @@ const navigate = useNavigate();
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-warm">
+    <div className="min-h-screen bg-gradient-warm" id="top-header">
       <Header />
       <Hero />
       <main className="container mx-auto px-4 pt-20 pb-12">

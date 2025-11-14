@@ -10,12 +10,19 @@ import { format } from "date-fns";
 import Hero from "@/components/hero_programs";
 import { useLocation } from "react-router-dom";
 
-const Programs = (props) => {
+const Programs = () => {
   const [selectedEvent, setSelectedEvent] = useState<any>(null);
   const [showRegistration, setShowRegistration] = useState(false);
 const location = useLocation(); 
  // ✅ Scroll to section if hash is present
   useEffect(() => {
+     const el = document.getElementById("top-header");
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    } else {
+      // fallback
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
   const interval = setInterval(() => {
     const iframe = document.querySelector("iframe");
     if (iframe && iframe.src.includes("formResponse")) {
@@ -26,7 +33,7 @@ const location = useLocation();
     }
   }, 1000);
   return () => clearInterval(interval);
-}, [showRegistration]);
+}, [showRegistration,location],);
 
   // Sample programs data - can be updated from admin dashboard
   const programs = [
@@ -138,15 +145,15 @@ const location = useLocation();
   //   }
   // ];
 
-  const handleRegisterClick = (event: any) => {
-    // setSelectedEvent(event);
-    setShowRegistration(true);
-  };
+  // const handleRegisterClick = (event: any) => {
+  //   // setSelectedEvent(event);
+  //   setShowRegistration(true);
+  // };
 
-  const handleRegistrationClose = () => {
-    setShowRegistration(false);
-    setSelectedEvent(null);
-  };
+  // const handleRegistrationClose = () => {
+  //   setShowRegistration(false);
+  //   setSelectedEvent(null);
+  // };
 
   // const getEventTypeColor = (type: string) => {
   //   switch (type.toLowerCase()) {
@@ -163,9 +170,9 @@ const location = useLocation();
   //   
 
   return (
-    <div className="min-h-screen bg-gradient-warm ">
+    <div id="top-header" className="min-h-screen bg-gradient-warm">
       <Header />
-        <Hero></Hero>
+        <Hero />
       <main className="main-content m-10" >
         {/* Hero Section */}
       
@@ -174,9 +181,9 @@ const location = useLocation();
 
           {/* Programs Section */}
           {/* <section className="mb-16"> */}
-          <div className="scroll-mt-40 flex justify-center items-center gap-3" id="programs-section">
+          <div className="flex justify-center items-center gap-3" >
             <BookOpen className="h-8 w-8 text-primary" />
-            <h2 className="text-3xl font-bold text-foreground items-center ">Our Services</h2>
+            <h2 className="text-3xl font-bold text-foreground items-center">Our Services</h2>
           </div>
         
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">

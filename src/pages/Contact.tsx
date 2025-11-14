@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -14,8 +14,21 @@ import GoogleMap from "@/components/GoogleMap";
 import { useToast } from "@/hooks/use-toast";
 import contactHeroImage from "@/assets/contact-hero.jpg";
 import Hero from "@/components/hero_contact";
-
+// import { useEffect } from "react";
+import {useNavigate,useLocation} from 'react-router-dom'
 const Contact = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  useEffect(() => {
+     const el = document.getElementById("top-header");
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    } else {
+      // fallback
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, [location]);
+
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     firstName: "",
@@ -34,12 +47,12 @@ const Contact = () => {
       description: "We'll get back to you within 24 hours.",
     });
     setFormData({
-      firstName: "",
-      lastName: "",
-      email: "",
-      subject: "",
-      category: "",
-      message: ""
+      firstName: formData.firstName,
+      lastName: formData.lastName,
+      email: formData.email,
+      subject: formData.subject,
+      category: formData.category,
+      message: formData.message
     });
   };
 
@@ -75,10 +88,10 @@ const Contact = () => {
   ];
 
   const socialLinks = [
-    { name: "Facebook", icon: <Facebook className="w-5 h-5" />, url: "https://facebook.com/eci" },
-    { name: "Twitter", icon: <Twitter className="w-5 h-5" />, url: "https://twitter.com/eci" },
-    { name: "Instagram", icon: <Instagram className="w-5 h-5" />, url: "https://instagram.com/eci" },
-    { name: "LinkedIn", icon: <Linkedin className="w-5 h-5" />, url: "https://linkedin.com/company/eci" }
+    { name: "Facebook", icon: <Facebook className="w-5 h-5" />, url: "https://www.facebook.com/people/Elite-Career-Initiatives/61575967515051" },
+    // { name: "Twitter", icon: <Twitter className="w-5 h-5" />, url: "https://twitter.com/eci" },
+    { name: "Instagram", icon: <Instagram className="w-5 h-5" />, url: "https://www.instagram.com/elite_career_initiatives" },
+    { name: "LinkedIn", icon: <Linkedin className="w-5 h-5" />, url: "https://www.linkedin.com/company/elite-career-initiatives" }
   ];
 
   const faqs = [
@@ -117,7 +130,7 @@ const Contact = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-warm">
+    <div className="min-h-screen bg-gradient-warm" id="top-header">
       <Header />
       
       <main className="pb-12">
