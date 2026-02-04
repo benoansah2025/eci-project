@@ -39,7 +39,7 @@ const App = () => (
       <Toaster />
       <Sonner />
     
-      <BrowserRouter basename = "/wp-content/reactpress/apps/eci-project/dist"> 
+      <BrowserRouter basename = "/"> 
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
