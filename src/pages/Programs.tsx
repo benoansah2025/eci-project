@@ -39,8 +39,8 @@ const location = useLocation();
   const programs = [
     {
       id: 1,
-      title: "One-on-One / Group Career Coaching",
-      description: "Personalized sessions to help students identify their strengths, interests, and career goals.",
+      title: "Skills development workshops",
+      description: "Cv/resume writing......personal branding, communication, ......",
       // duration: "12 weeks",
       // level: "Beginner to Intermediate",
       // category: "Technology",
@@ -49,8 +49,8 @@ const location = useLocation();
     },
     {
       id: 2,
-      title: "Skills Development Workshops and Webinars",
-      description: "Sessions on diverse career-related topics like resume writing, technical skills, interview skills, networking, and career exploration",
+      title: "Career Fairs/Empowerment bootcamps and networking events",
+      description: "Industry experts to navigate the professional world",
       // duration: "8 weeks",
       // level: "All Levels",
       // category: "Business",
@@ -60,23 +60,23 @@ const location = useLocation();
     {
       id: 3,
       title: "Mentorship Programs",
-      description: "Connecting students with professionals and experts in their desired fields.",
+      description: "Desired fields for guidance on career planning",
       // duration: "6 weeks",
       // level: "All Levels",
       // category: "Career Development",
       // features: ["Resume Building", "Interview Skills", "Networking", "Industry Insights"],
       color: "bg-gradient-accent"
     },
-    {
-      id: 4,
-      title: "Career Fairs/Readiness Bootcamps and Networking Events",
-      description: "Opportunities for students to interact with employers and industry experts.",
-      // duration: "12 weeks",
-      // level: "Intermediate to Advanced",
-      // category: "Career Empowerment",
-      // features: ["One-on-One Mentorship", "Leadership Workshops", "Personal Branding", "Strategic Career Planning"],
-      color: "bg-gradient-accent"
-    }
+    // {
+    //   id: 4,
+    //   title: "Career Fairs/Readiness Bootcamps and Networking Events",
+    //   description: "Opportunities for students to interact with employers and industry experts.",
+    //   // duration: "12 weeks",
+    //   // level: "Intermediate to Advanced",
+    //   // category: "Career Empowerment",
+    //   // features: ["One-on-One Mentorship", "Leadership Workshops", "Personal Branding", "Strategic Career Planning"],
+    //   color: "bg-gradient-accent"
+    // }
     // {
     //   id: 5,
     //   title: "Internship and Job Shadowing Opportunities",

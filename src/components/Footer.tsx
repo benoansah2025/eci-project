@@ -163,7 +163,7 @@ const Footer = () => {
 
           </p>
           <p className="text-md text-primary">
-            © copyright 2025
+            © copyright 2026
 
           </p>
           <p className="text-sm text-primary">

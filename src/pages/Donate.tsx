@@ -579,11 +579,18 @@ const navigate = useNavigate();
                 justifyContent:"center",
                 width:"100%"
               }}>
-<Button variant="hero" className="mt-10 bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary/90 transition" onClick={() => {
-  navigate("/contact");
-}}>
-              Contact Us to Partner
-        </Button>
+
+      <div>
+        </div>          
+      <div className="flex flex-row gap-4">
+  <Button variant="hero" className="mt-10 bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary/90 transition" onClick={() => navigate("/contact")}>
+    Contact Us to Partner
+  </Button>
+
+  <Button variant="hero" className="mt-10 bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary/90 transition">
+    Donate Now
+  </Button>
+</div>
               </div>
         
       </main>

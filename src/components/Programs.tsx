@@ -27,16 +27,16 @@ const Programs = () => {
 
   const programs = [
     {
-      title: "One-on-One / Group Career Coaching",
-      description: "Personalized sessions to help students identify their strengths, interests, and career goals",
+      title: "Skills development workshops",
+      description: "Personalized sessions to help students identify their strengths, interests,career goals,CV/Resume writing,personal branding and communication.",
       // features: ["Resume Building", "Interview Skills", "Professional Communication", "Industry Insights"],
       // duration: "6 weeks",
       // participants: "150+ graduates",
       // icon: "📚"
     },
     {
-      title: "Skills Development Workshops and Webinars",
-      description: "Sessions on diverse career-related topics like resume writing, technical skills, interview skills, networking, and career exploration",
+      title: "Career Fairs/Empowerment bootcamps and networking events",
+      description: "Sessions on diverse career-related topics like resume writing, technical skills, interview skills, networking, and career exploration industry experts to navigate the professional world",
       // features: ["Personal Mentor", "Career Planning", "Network Building", "Goal Setting"],
       // duration: "6 months",
       // participants: "200+ matched pairs",
@@ -44,7 +44,7 @@ const Programs = () => {
     },
     {
       title: "Mentorship Programs",
-      description: "Connecting students with professionals and experts in their desired fields.",
+      description: "Connecting students with professionals and experts in their desired fields for guidance on career planning.",
       // features: ["Partner Companies", "Job Matching", "Application Support", "Follow-up Assistance"],
       // duration: "Ongoing",
       // participants: "85% placement rate",

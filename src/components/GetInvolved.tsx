@@ -64,7 +64,20 @@ const GetInvolved = () => {
       highlight: "New cohort starts quarterly"
     },
     {
-      title: "Industry Professionals",
+      title: "Bootcamps and networking events",
+      subtitle: "Share your expertise",
+      description: "Become a mentor and help shape the next generation of Ghana's workforce while giving back to your community.",
+      benefits: [
+        "Flexible mentoring schedule",
+        "Leadership development",
+        "Community impact",
+        "Professional recognition"
+      ],
+      cta: "Become a Mentor",
+      highlight: "3 hours per week commitment"
+    },
+    {
+      title: "Training programs",
       subtitle: "Share your expertise",
       description: "Become a mentor and help shape the next generation of Ghana's workforce while giving back to your community.",
       benefits: [
@@ -78,16 +91,14 @@ const GetInvolved = () => {
     },
     {
       title: "Companies & Organizations",
-      subtitle: "Find top talent",
-      description: "Partner with us to access a pipeline of well-prepared, motivated candidates ready to contribute to your organization.",
+      subtitle: "Donate and partner with us",
+      description: "Donate and partner to support the mission",
       benefits: [
-        "Pre-screened candidates",
-        "Reduced hiring costs",
         "CSR impact",
-        "Talent pipeline access"
+        "Public Recognition and Logo placement on materials"
       ],
       cta: "Partner With Us",
-      highlight: "50+ companies trust ECI"
+      // highlight: "50+ companies trust ECI"
     }
   ];
 
@@ -104,7 +115,7 @@ const GetInvolved = () => {
           </p>
         </div>
         
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid lg:grid-cols-4 gap-4">
           {opportunities.map((opportunity, index) => (
             <Card key={index} className="bg-card shadow-elegant hover:shadow-warm transition-all duration-300 flex flex-col">
               <CardHeader className="text-center pb-4">
