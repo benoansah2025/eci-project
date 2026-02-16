@@ -21,7 +21,7 @@ const Hero = () => {
             Support <span className="text-primary ">Our Mission</span>
             {/* <span className="text-primary block mt-3">Employment Success</span> */}
              <p className="text-lg md:text-3xl text-secondary-foreground  mb-8 max-w-1xl pb-20">
-            Help us bridge the gap between education and employment in Ghana. Your contribution makes a lasting impact.
+            Founded with a passion for empowering Ghana's youth and beyond.
           </p>
           </h1>
           

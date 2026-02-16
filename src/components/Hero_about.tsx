@@ -23,7 +23,7 @@ const Hero = () => {
           </h1>
           
           <p className="text-lg md:text-3xl text-secondary-foreground  mb-8 max-w-1xl pb-20">
-            Founded with a passion for empowering Ghana's youth, we bridge the gap between education and employment, creating pathways for young professionals to thrive in the modern economy.
+            Founded with a passion for empowering Ghana's youth and beyond.
           </p>
           
           {/* <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">

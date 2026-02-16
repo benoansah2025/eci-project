@@ -45,7 +45,7 @@ const Team = () => {
   // CEO
   const ceo = {
     name: "Mary Akua Ahenmah Dadzie",
-    position: "Chief Executive Officer & Founder",
+    position: "Founder/Executive Director",
     image: ceoImage,
     bio: "Ms. Mary Akua Ahenmah Dadzie brings over 15 years of experience in education and youth development. Former Director of Career Services at University of Ghana, she holds a PhD in Educational Leadership and has been recognized as a leading voice in African youth empowerment.",
     achievements: [
@@ -197,19 +197,16 @@ const Team = () => {
         </div> */}
 
         <Tabs defaultValue="ceo" className="w-full">
-          <TabsList className="grid w-full grid-cols-2 mb-8">
+          <TabsList className="grid w-full grid-cols-3 mb-8">
             <TabsTrigger value="ceo" className="flex items-center gap-2 data-[state=active]:bg-gradient-hero data-[state=active]:text-primary-foreground ">
               <Award className="w-4 h-4" /> CEO
             </TabsTrigger>
             <TabsTrigger value="board" className="flex items-center gap-2 data-[state=active]:bg-gradient-hero data-[state=active]:text-primary-foreground">
               <Building2 className="w-4 h-4" /> Board
             </TabsTrigger>
-            {/* <TabsTrigger value="core" className="flex items-center gap-2 data-[state=active]:bg-gradient-hero data-[state=active]:text-primary-foreground">
+            { <TabsTrigger value="core" className="flex items-center gap-2 data-[state=active]:bg-gradient-hero data-[state=active]:text-primary-foreground">
               <Users className="w-4 h-4 " /> Core Team
-            </TabsTrigger>
-            <TabsTrigger value="coordinators" className="flex items-center gap-2 data-[state=active]:bg-gradient-hero data-[state=active]:text-primary-foreground">
-              <Users className="w-4 h-4" /> Coordinators
-            </TabsTrigger> */}
+            </TabsTrigger> }
           </TabsList>
 
           {/* CEO */}
@@ -288,8 +285,7 @@ const Team = () => {
               ))}
             </div>
           </TabsContent>
-</Tabs>
-          {/* Core Team
+
           <TabsContent value="core">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {coreTeam.map((member, index) => (
@@ -309,7 +305,10 @@ const Team = () => {
                 </Card>
               ))}
             </div>
-          </TabsContent> */}
+          </TabsContent> 
+</Tabs>
+          {/* Core Team} */}
+          
 
           {/* Coordinators */}
           {/* <TabsContent value="coordinators">
@@ -387,12 +386,7 @@ const Team = () => {
              }}>
             Join Our Team
              </Button>
-              <a 
-                href="mailto:careers@eci.gh" 
-                className="border border-background text-background hover:bg-background hover:text-foreground transition-colors px-5 py-2 rounded-md font-semibold inline-block"
-              >
-                Send Your CV
-              </a>
+              
             </div>
           </CardContent>
         </Card>
