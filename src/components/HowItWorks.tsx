@@ -23,7 +23,7 @@ const HowItWorks = () => {
     {
       step: "4",
       title: "Apply & Succeed",
-      description: "Access exclusive job opportunities with our partner companies and receive ongoing support throughout your career transition.",
+      description: "Access exclusive job opportunities from companies and receive ongoing support throughout your career transition.",
       icon: "🚀"
     }
   ];

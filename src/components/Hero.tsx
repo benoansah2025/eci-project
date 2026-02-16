@@ -20,13 +20,13 @@ const Hero = () => {
           <h1 className="text-4xl md:text-4xl font-bold text-foreground mb-6 leading-tight">
            Bridging the gap between
             <span className="text-primary block mt-2">traditional education(classroom) 
-            and employment (workplace)</span>
+            and employment (industry needs)</span>
           </h1>
           
-          <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl">
+          {/* <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl">
             Through personalized coaching, 
             career development trainings, workshops, and resources materials.
-          </p>
+          </p> */}
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
             <Button 
