@@ -49,7 +49,7 @@ const location = useLocation();
     },
     {
       id: 2,
-      title: "Career Fairs/Empowerment bootcamps and networking events",
+      title: "Career Fairs/Empowerment/Networking bootcamps ",
       description: "Industry experts to navigate the professional world",
       // duration: "8 weeks",
       // level: "All Levels",
@@ -186,7 +186,7 @@ const location = useLocation();
             <h2 className="text-3xl font-bold text-foreground items-center">Our Services</h2>
           </div>
         
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-6">
             {programs.map((program) => (
               <Card key={program.id} className="hover:shadow-elegant transition-all duration-300 border-border/50">
                 <div className={`h-2 ${program.color} rounded-t-lg`} />
@@ -194,7 +194,7 @@ const location = useLocation();
                   <div className="flex items-start justify-between">
                     <div>
                       <CardTitle className="text-xl text-foreground">{program.title}</CardTitle>
-                      <CardDescription className="mt-4">{program.description}</CardDescription>
+                      <CardDescription className="mt-5">{program.description}</CardDescription>
                     </div>
                   </div>
                   {/* <div className="flex flex-wrap gap-2 mt-4">

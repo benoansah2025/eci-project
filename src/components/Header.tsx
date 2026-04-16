@@ -50,6 +50,11 @@ const Header = () => {
             Services
           </Button>
           <Button variant="link" onClick={()=>{
+            navigate('/gallery')
+          }} aria-label="Gallery page button/link">
+            Gallery
+          </Button>
+          <Button variant="link" onClick={()=>{
             navigate('/contact')
           }} aria-label="Contact page button/link">
             Contact
@@ -140,6 +145,11 @@ const Header = () => {
                   navigate('/programs')
                  }} aria-label="Services page button/link">
                   Services
+                </Button>
+                  <Button variant="link" onClick={()=>{
+                  navigate('/gallery')
+                 }} aria-label="Gallery page button/link">
+                  Gallery
                 </Button>
                   <Button variant="link" onClick={()=>{
                   navigate('/contact')

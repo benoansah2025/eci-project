@@ -83,6 +83,11 @@ const Footer = () => {
               About ECI
             </Button>
             <Button variant="link" onClick={()=>{
+              navigate("/gallery")
+            }}>
+              Gallery
+            </Button>
+            <Button variant="link" onClick={()=>{
               navigate("/team")
             }}>
               Our Team

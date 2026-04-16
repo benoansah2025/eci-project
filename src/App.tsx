@@ -27,8 +27,7 @@ import DashboardLocations from "./pages/DashboardLocations";
 import DashboardMessages from "./pages/DashboardMessages";
 import DashboardSettings from "./pages/DashboardSettings";
 import DashboardProfile from "./pages/DashboardProfile";
-
-
+import Gallery from "./pages/Gallery";
 
 const queryClient = new QueryClient();
 
@@ -54,6 +53,7 @@ const App = () => (
           <Route path="/auth/verify-email" element={<VerifyEmail />} />
           <Route path="/auth/callback" element={<AuthCallback />} />
           <Route path="/programs" element={<Programs />} />
+          <Route path="/gallery" element={<Gallery />} />
           <Route path="/dashboard/analytics" element={<DashboardAnalytics />} />
           <Route path="/dashboard/programs" element={<DashboardPrograms />} />
           <Route path="/dashboard/users" element={<DashboardUsers />} />

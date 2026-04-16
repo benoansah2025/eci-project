@@ -6,12 +6,15 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero_about";
 import { useLocation,useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect,useState } from "react";
 import { Button } from "@/components/ui/button";
+import JoinTeamModal from "@/components/modals/JoinTeamModal";
+
 
 const About = () => {
   const navigate = useNavigate();
   const location = useLocation(); 
+  const [isModalOpen, setIsModalOpen] = useState(false);
  // ✅ Scroll to section if hash is present
   useEffect(() => {
      const el = document.getElementById("top-header");
@@ -293,9 +296,7 @@ const About = () => {
               looking to make an impact, there's a place for you in the ECI community.
             </p>
             <div className="gap-3 flex justify-center">
-             <Button variant="hero" size="lg" onClick={()=>{
-              navigate("/programs")
-             }}>
+             <Button variant="hero" size="lg" onClick={()=>setIsModalOpen(true)}>
             Join Our Team
             </Button>
             <Button variant="hero" size="lg"  onClick={()=>{
@@ -325,6 +326,7 @@ const About = () => {
       </main>
 
       <Footer />
+      <JoinTeamModal open={isModalOpen} onOpenChange={setIsModalOpen} />
     </div>
   );
 };
