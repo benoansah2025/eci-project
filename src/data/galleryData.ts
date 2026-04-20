@@ -19,10 +19,11 @@ export interface GalleryImage {
   featured: boolean;
 }
 
+
 export const galleryImages: GalleryImage[] = [
 
   { id: 6,   publicId: "RYAN6452_efh0m2",  caption: "Networking and mentorship at ECI Workshop",                  category: "Workshops", date: "2026", location: "Accra, Ghana", featured: false },
-  { id: 8,   publicId: "RYAN6116_zwbao2",  caption: "Our Guest Speaker",                 category: "Workshops", date: "2026", location: "Accra, Ghana", featured: true },
+  { id: 8,   publicId: "RYAN6061_m5apu7",  caption: "Our Keynote Speaker",                 category: "Workshops", date: "2026", location: "Accra, Ghana", featured: true },
   { id: 10,  publicId: "RYAN6044_as1qo9",  caption: "ECI facilitator leading a career readiness session",         category: "Workshops", date: "2026", location: "Accra, Ghana", featured: false  },
   { id: 11,  publicId: "RYAN5881_ebad1b",  caption: "Career coaching and mentorship in progress",                 category: "Workshops", date: "2026", location: "Accra, Ghana", featured: false },
   { id: 12,  publicId: "RYAN6383_nsobhf",  caption: "ECI team and participants celebrating progress",             category: "Workshops", date: "2026", location: "Accra, Ghana", featured: false },
@@ -48,9 +49,9 @@ export const galleryImages: GalleryImage[] = [
   { id: 38,  publicId: "RYAN6267_jgh2l2",  caption: "Panel Discussion",                  category: "Workshops", date: "2026", location: "Accra, Ghana", featured: false },
   { id: 39,  publicId: "RYAN6359_uzdg9p",  caption: "Interactive workshop session on career development",         category: "Workshops", date: "2026", location: "Accra, Ghana", featured: false },
   { id: 40,  publicId: "RYAN6184_rpdr6x",  caption: "Personalized coaching at the ECI Workshop",                  category: "Workshops", date: "2026", location: "Accra, Ghana", featured: false },
-  { id: 42,  publicId: "RYAN6182_zpehcr",  caption: "ECI Workshop — transforming careers across Ghana",           category: "Workshops", date: "2026", location: "Accra, Ghana", featured: false },
+  // { id: 42,  publicId: "RYAN6182_zpehcr",  caption: "ECI Workshop — transforming careers across Ghana",           category: "Workshops", date: "2026", location: "Accra, Ghana", featured: false },
   { id: 43,  publicId: "RYAN6442_aotbwb",  caption: "Group activity at the Elite Career Initiative program",      category: "Workshops", date: "2026", location: "Accra, Ghana", featured: false },
- { id: 50,  publicId: "RYAN6020_prpnci",  caption: "ECI participants building workplace readiness skills",        category: "Workshops", date: "2026", location: "Accra, Ghana", featured: false },
+//  { id: 50,  publicId: "RYAN6020_prpnci",  caption: "ECI participants building workplace readiness skills",        category: "Workshops", date: "2026", location: "Accra, Ghana", featured: false },
   { id: 51,  publicId: "RYAN6230_sdzunp",  caption: "Career coaching and mentorship in progress",                 category: "Workshops", date: "2026", location: "Accra, Ghana", featured: false },
   { id: 52,  publicId: "RYAN5888_nfdqva",  caption: "Group session at the Elite Career Initiative Workshop",      category: "Workshops", date: "2026", location: "Accra, Ghana", featured: false },
   { id: 53,  publicId: "RYAN6050_m7czce",  caption: "ECI career development workshop in full swing",              category: "Workshops", date: "2026", location: "Accra, Ghana", featured: false },
@@ -77,7 +78,7 @@ export const galleryImages: GalleryImage[] = [
   { id: 121, publicId: "RYAN6414_vmuxqq",  caption: "ECI Team behind the scenes",           category: "Workshops", date: "2026", location: "Accra, Ghana", featured: true },
   { id: 130, publicId: "RYAN6094_worfir",  caption: "ECI career development workshop in full swing",              category: "Workshops", date: "2026", location: "Accra, Ghana", featured: false },
   { id: 144, publicId: "RYAN61GTf37_p7frpq", caption: "ECI Workshop — transforming careers across Ghana",         category: "Workshops", date: "2026", location: "Accra, Ghana", featured: false },
-  { id: 145, publicId: "RYAN6061_m5apu7",  caption: "Our Keynote Speaker",            category: "Workshops", date: "2026", location: "Accra, Ghana", featured: true },
+  { id: 145, publicId: "RYAN6116_zwbao2",  caption: "Our Guest Speaker",            category: "Workshops", date: "2026", location: "Accra, Ghana", featured: true },
   { id: 146, publicId: "RYAN6405_ffdolb",  caption: "ECI team",         category: "Workshops", date: "2026", location: "Accra, Ghana", featured: false },
   { id: 147, publicId: "RYAN6402_tqawcx",  caption: "Networking and Mentorship at ECI Workshop",        category: "Workshops", date: "2026", location: "Accra, Ghana", featured: false },
   { id: 149, publicId: "RYAN6320_c1qxy3",  caption: "Closing moments of an impactful ECI Workshop",               category: "Workshops", date: "2026", location: "Accra, Ghana", featured: false },

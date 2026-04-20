@@ -23,6 +23,8 @@ export function getImageUrl(
     crop?: "fill" | "fit" | "scale" | "limit" | "thumb";
     /** Cloudinary gravity (e.g. auto, face) — use with c_fill for smarter focal point */
     gravity?: "auto" | "face" | "center" | "north" | "south" | "east" | "west";
+    /** Optional Cloudinary version segment, e.g. v1776699143 */
+    version?: string;
   } = {}
 ): string {
   const {
@@ -32,6 +34,7 @@ export function getImageUrl(
     format = "auto",
     crop = "fill",
     gravity,
+    version,
   } = options;
 
   const transforms: string[] = [`f_${format}`, `q_${quality}`];
@@ -40,7 +43,8 @@ export function getImageUrl(
   if (width || height) transforms.push(`c_${crop}`);
   if (gravity) transforms.push(`g_${gravity}`);
 
-  return `${BASE_URL}/${transforms.join(",")}/${withExt(publicId)}`;
+  const versionSegment = version ? `${version}/` : "";
+  return `${BASE_URL}/${transforms.join(",")}/${versionSegment}${withExt(publicId)}`;
 }
 
 /**
@@ -66,4 +70,8 @@ export const imagePresets = {
   // CEO nominations — full poster visible, no cropping
   nomination: (publicId: string) =>
     getImageUrl(publicId, { width: 1000, height: 1400, crop: "fit" }),
+
+  // Home page event flyer — keep full poster visible
+  eventBanner: (publicId: string, version = "v1776699143") =>
+    getImageUrl(publicId, { width: 1200, crop: "fit", version }),
 };
