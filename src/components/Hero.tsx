@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-image.jpg";
+import { Underline } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -35,7 +36,7 @@ const Hero = () => {
               className="text-lg px-8 py-4"
               aria-label="Start your career development journey with ECI"
             >
-              <a href="#how-it-works">Start Your Journey</a>
+              <a href="#how-it-works" style={{ textDecoration: 'none' }}>Start Your Journey</a>
             </Button>
             <Button 
               variant="hero" 
@@ -43,7 +44,7 @@ const Hero = () => {
               className="text-lg px-8 py-4 border-foreground text-primary-foreground hover:bg-primary hover:text-primary-foreground"
               aria-label="Apply to become a mentor and share your expertise"
             >
-            <a href="#programs">Become a Mentor</a>  
+            <a href="#programs"style={{ textDecoration: 'none' }} >Become a Mentor</a>  
             </Button>
           </div>
           
