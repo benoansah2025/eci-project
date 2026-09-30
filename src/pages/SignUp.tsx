@@ -80,13 +80,16 @@ const SignUp = () => {
         password: data.password,
       });
 
-      if (res.user) {
+      // OTP verification disabled — navigate directly to dashboard on success
+      toast({ title: "Account created!", description: "Welcome to ECI." });
+      navigate("/dashboard");
+      /* if (res.user) {
         toast({ title: "Account created!", description: "Welcome to ECI." });
         navigate("/dashboard");
       } else {
         toast({ title: "Code sent", description: "A verification code has been sent to your email." });
         navigate("/auth/verify-otp", { state: { email: data.email, isSignUp: true } });
-      }
+      } */
     } catch (error) {
       toast({
         title: "Error",

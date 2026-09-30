@@ -53,13 +53,16 @@ const location = useLocation();
         password: data.password,
       });
 
-      if (res.user) {
+      // OTP verification disabled — navigate directly to dashboard on success
+      toast({ title: "Welcome back!", description: "Signed in successfully." });
+      navigate("/dashboard");
+      /* if (res.user) {
         toast({ title: "Welcome back!", description: "Signed in successfully." });
         navigate("/dashboard");
       } else {
         toast({ title: "Code sent", description: "A verification code has been sent to your email." });
         navigate("/auth/verify-otp", { state: { email: data.email, isSignIn: true } });
-      }
+      } */
     } catch (error) {
       toast({
         title: "Error",
