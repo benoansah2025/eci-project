@@ -8,16 +8,17 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { DatePicker } from "@/components/ui/date-picker";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
+import { api } from "@/integrations/api/client";
 import { Eye, EyeOff, UserPlus } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useLocation } from "react-router-dom";
 
-
+interface DivisionOption {
+  value: string;
+  label: string;
+}
 
 const signUpSchema = z.object({
   firstName: z.string().min(1, "First name is required").max(50, "First name must be less than 50 characters"),
@@ -27,23 +28,8 @@ const signUpSchema = z.object({
     .min(10, "Password must be at least 10 characters")
     .max(24, "Password must be no more than 24 characters")
     .regex(/^(?=.*[a-zA-Z])(?=.*\d)/, "Password must contain at least one letter and one number"),
-  username: z.string()
-    .min(3, "Username must be at least 3 characters")
-    .max(20, "Username must be no more than 20 characters")
-    .regex(/^[a-zA-Z0-9]+$/, "Username can only contain letters and numbers"),
   phoneNumber: z.string().min(1, "Phone number is required"),
-   dateOfBirth: z.date({
-    required_error: "Date of birth is required",
-  }).refine((date) => {
-    const age = new Date().getFullYear() - date.getFullYear();
-    return age >= 13 && age <= 100;
-  }, "You must be between 13 and 100 years old"),
- 
-  countryOfBirth: z.string().min(1, "Country of birth is required"),
-  cityOfResidence: z.string().min(1, "City of residence is required"),
-  userType: z.enum(["volunteer", "student"], {
-    required_error: "Please select if you're a volunteer or student",
-  }),
+  division: z.string().min(1, "Division is required"),
 });
 
 type SignUpFormData = z.infer<typeof signUpSchema>;
@@ -51,19 +37,24 @@ type SignUpFormData = z.infer<typeof signUpSchema>;
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [divisions, setDivisions] = useState<DivisionOption[]>([]);
   const { toast } = useToast();
   const navigate = useNavigate();
-const location = useLocation(); 
- // ✅ Scroll to section if hash is present
+  const location = useLocation();
+
   useEffect(() => {
     if (location.hash) {
-      const id = location.hash.replace("#", ""); // "sign-in"
-      const el = document.getElementById(id);
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
-      }
+      const el = document.getElementById(location.hash.replace("#", ""));
+      if (el) el.scrollIntoView({ behavior: "smooth" });
     }
   }, [location]);
+
+  useEffect(() => {
+    api.get<{ success: boolean; divisions: DivisionOption[] }>('/api/accounts/divisions/')
+      .then((res) => setDivisions(res.divisions))
+      .catch(() => { /* non-fatal — division select stays empty */ });
+  }, []);
+
   const {
     register,
     handleSubmit,
@@ -75,48 +66,31 @@ const location = useLocation();
     resolver: zodResolver(signUpSchema),
   });
 
-  const userType = watch("userType");
+  const division = watch("division");
 
   const onSubmit = async (data: SignUpFormData) => {
     setIsLoading(true);
     try {
-      const { error } = await supabase.auth.signUp({
+      await api.post('/api/accounts/signup/', {
         email: data.email,
+        first_name: data.firstName,
+        last_name: data.lastName,
+        phone_number: data.phoneNumber,
+        division: data.division,
         password: data.password,
-        options: {
-          emailRedirectTo: `${window.location.origin}/auth/callback`,
-          data: {
-            first_name: data.firstName,
-            last_name: data.lastName,
-            username: data.username,
-            phone_number: data.phoneNumber,
-             date_of_birth: data.dateOfBirth.toISOString().split('T')[0],
-            country_of_birth: data.countryOfBirth,
-            city_of_residence: data.cityOfResidence,
-            user_type: data.userType,
-          },
-        },
       });
 
-      if (error) {
-        toast({
-          title: "Error",
-          description: error.message,
-          variant: "destructive",
-        });
-      } else {
-        toast({
-          title: "Success!",
-          description: "Account created successfully. Please check your email for verification.",
-        });
-        navigate("/auth/verify-email", { 
-          state: { email: data.email, isSignUp: true } 
-        });
-      }
+      toast({
+        title: "Code sent",
+        description: "A verification code has been sent to your email.",
+      });
+      navigate("/auth/verify-otp", {
+        state: { email: data.email, isSignUp: true },
+      });
     } catch (error) {
       toast({
         title: "Error",
-        description: "An unexpected error occurred. Please try again.",
+        description: error instanceof Error ? error.message : "An unexpected error occurred.",
         variant: "destructive",
       });
     } finally {
@@ -184,19 +158,6 @@ const location = useLocation();
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="username">Username</Label>
-                  <Input
-                    id="username"
-                    {...register("username")}
-                    placeholder="john123"
-                    className={errors.username ? "border-destructive" : ""}
-                  />
-                  {errors.username && (
-                    <p className="text-sm text-destructive">{errors.username.message}</p>
-                  )}
-                </div>
-
-                <div className="space-y-2">
                   <Label htmlFor="password">Password</Label>
                   <div className="relative">
                     <Input
@@ -241,68 +202,26 @@ const location = useLocation();
                   )}
                 </div>
 
-                 <div className="space-y-2">
-                  <Label htmlFor="dateOfBirth">Date of Birth</Label>
+                <div className="space-y-2">
+                  <Label htmlFor="division">Division</Label>
                   <Controller
-                    name="dateOfBirth"
+                    name="division"
                     control={control}
                     render={({ field }) => (
-                      <DatePicker
-                        selected={field.value}
-                        onSelect={field.onChange}
-                        placeholderText="Select your date of birth"
-                        className={errors.dateOfBirth ? "border-destructive" : ""}
-                      />
+                      <Select value={field.value} onValueChange={field.onChange}>
+                        <SelectTrigger className={errors.division ? "border-destructive" : ""}>
+                          <SelectValue placeholder="Select your division" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          {divisions.map((d) => (
+                            <SelectItem key={d.value} value={d.value}>{d.label}</SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
                     )}
                   />
-                  {errors.dateOfBirth && (
-                    <p className="text-sm text-destructive">{errors.dateOfBirth.message}</p>
-                  )}
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="countryOfBirth">Country of Birth/Nationality</Label>
-                  <Input
-                    id="countryOfBirth"
-                    {...register("countryOfBirth")}
-                    placeholder="Ghana"
-                    className={errors.countryOfBirth ? "border-destructive" : ""}
-                  />
-                  {errors.countryOfBirth && (
-                    <p className="text-sm text-destructive">{errors.countryOfBirth.message}</p>
-                  )}
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="cityOfResidence">City of Residence</Label>
-                  <Input
-                    id="cityOfResidence"
-                    {...register("cityOfResidence")}
-                    placeholder="Accra"
-                    className={errors.cityOfResidence ? "border-destructive" : ""}
-                  />
-                  {errors.cityOfResidence && (
-                    <p className="text-sm text-destructive">{errors.cityOfResidence.message}</p>
-                  )}
-                </div>
-
-                <div className="space-y-3">
-                  <Label>I am a:</Label>
-                  <RadioGroup
-                    value={userType}
-                    onValueChange={(value) => setValue("userType", value as "volunteer" | "student")}
-                  >
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="student" id="student" />
-                      <Label htmlFor="student">Student seeking career mentorship</Label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="volunteer" id="volunteer" />
-                      <Label htmlFor="volunteer">Volunteer</Label>
-                    </div>
-                  </RadioGroup>
-                  {errors.userType && (
-                    <p className="text-sm text-destructive">{errors.userType.message}</p>
+                  {errors.division && (
+                    <p className="text-sm text-destructive">{errors.division.message}</p>
                   )}
                 </div>
 

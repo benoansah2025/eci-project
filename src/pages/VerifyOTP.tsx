@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { InputOTP, InputOTPGroup, InputOTPSlot } from "@/components/ui/input-otp";
 import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
+import { api } from "@/integrations/api/client";
 import { Shield, ArrowLeft } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -54,33 +54,21 @@ const VerifyOTP = () => {
 
     setIsLoading(true);
     try {
-      const { error } = await supabase.auth.verifyOtp({
-        email,
-        token: otp,
-        type: isSignUp ? 'signup' : 'email',
-      });
+      const path = isSignUp
+        ? '/api/accounts/signup/verify/'
+        : '/api/accounts/signin/verify/';
 
-      if (error) {
-        toast({
-          title: "Error",
-          description: error.message,
-          variant: "destructive",
-        });
-      } else {
-        toast({
-          title: "Success!",
-          description: "Identity verified successfully. Redirecting to dashboard...",
-        });
-        
-        // Short delay before redirect
-        setTimeout(() => {
-          navigate("/dashboard");
-        }, 1500);
-      }
+      await api.post(path, { email, otp });
+
+      toast({
+        title: "Success!",
+        description: "Identity verified successfully. Redirecting to dashboard...",
+      });
+      setTimeout(() => navigate("/dashboard"), 1500);
     } catch (error) {
       toast({
         title: "Error",
-        description: "An unexpected error occurred. Please try again.",
+        description: error instanceof Error ? error.message : "An unexpected error occurred.",
         variant: "destructive",
       });
     } finally {
@@ -88,49 +76,6 @@ const VerifyOTP = () => {
     }
   };
 
-  const handleResendOTP = async () => {
-    setIsLoading(true);
-    try {
-      const { error } = await supabase.auth.resend({
-        type: isSignUp ? 'signup' : 'email_change',
-        email,
-      });
-
-      if (error) {
-        toast({
-          title: "Error",
-          description: error.message,
-          variant: "destructive",
-        });
-      } else {
-        toast({
-          title: "OTP Resent",
-          description: "A new verification code has been sent to your email.",
-        });
-        setCountdown(60);
-        setCanResend(false);
-        
-        const timer = setInterval(() => {
-          setCountdown((prev) => {
-            if (prev <= 1) {
-              setCanResend(true);
-              clearInterval(timer);
-              return 0;
-            }
-            return prev - 1;
-          });
-        }, 1000);
-      }
-    } catch (error) {
-      toast({
-        title: "Error",
-        description: "Failed to resend OTP. Please try again.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsLoading(false);
-    }
-  };
 
   const handleBack = () => {
     if (isSignUp) {
@@ -201,11 +146,10 @@ const VerifyOTP = () => {
                 {canResend ? (
                   <Button
                     variant="ghost"
-                    onClick={handleResendOTP}
-                    disabled={isLoading}
+                    onClick={handleBack}
                     className="text-primary hover:text-primary/80"
                   >
-                    Resend Code
+                    Go back and try again
                   </Button>
                 ) : (
                   <p className="text-sm text-muted-foreground">

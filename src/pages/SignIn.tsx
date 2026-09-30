@@ -8,14 +8,14 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
+import { api } from "@/integrations/api/client";
 import { Eye, EyeOff, LogIn } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useLocation } from "react-router-dom";
 
 const signInSchema = z.object({
-  emailOrUsername: z.string().min(1, "Email or username is required"),
+  email: z.string().email("Invalid email address"),
   password: z.string().min(1, "Password is required"),
 });
 
@@ -45,73 +45,25 @@ const location = useLocation();
     resolver: zodResolver(signInSchema),
   });
 
-  const isEmail = (value: string) => {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-  };
-
   const onSubmit = async (data: SignInFormData) => {
     setIsLoading(true);
     try {
-      let email = data.emailOrUsername;
-
-      // If it's not an email, try to find the user by username
-      if (!isEmail(data.emailOrUsername)) {
-        const { data: profile, error: profileError } = await supabase
-          .from('profiles')
-          .select('user_id')
-          .eq('username', data.emailOrUsername)
-          .single();
-
-        if (profileError || !profile) {
-          toast({
-            title: "Error",
-            description: "Username not found",
-            variant: "destructive",
-          });
-          setIsLoading(false);
-          return;
-        }
-
-        // Get the email from auth.users table
-        const { data: userData, error: userError } = await supabase.auth.admin.getUserById(profile.user_id);
-        
-        if (userError || !userData.user?.email) {
-          toast({
-            title: "Error",
-            description: "Unable to find user email",
-            variant: "destructive",
-          });
-          setIsLoading(false);
-          return;
-        }
-        
-        email = userData.user.email;
-      }
-
-      const { error } = await supabase.auth.signInWithPassword({
-        email,
+      await api.post('/api/accounts/signin/', {
+        email: data.email,
         password: data.password,
       });
 
-      if (error) {
-        toast({
-          title: "Error",
-          description: error.message,
-          variant: "destructive",
-        });
-      } else {
-        toast({
-          title: "Success!",
-          description: "Welcome to ECI dashboard!",
-        });
-        navigate("/dashboard", { 
-          state: { email, isSignIn: true } 
-        });
-      }
+      toast({
+        title: "Code sent",
+        description: "A verification code has been sent to your email.",
+      });
+      navigate("/auth/verify-otp", {
+        state: { email: data.email, isSignIn: true },
+      });
     } catch (error) {
       toast({
         title: "Error",
-        description: "An unexpected error occurred. Please try again.",
+        description: error instanceof Error ? error.message : "An unexpected error occurred.",
         variant: "destructive",
       });
     } finally {
@@ -138,15 +90,16 @@ const location = useLocation();
             <CardContent>
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
                 <div className="space-y-2">
-                  <Label htmlFor="emailOrUsername">Email or Username</Label>
+                  <Label htmlFor="email">Email</Label>
                   <Input
-                    id="emailOrUsername"
-                    {...register("emailOrUsername")}
-                    placeholder="john@example.com or john123"
-                    className={errors.emailOrUsername ? "border-destructive" : ""}
+                    id="email"
+                    type="email"
+                    {...register("email")}
+                    placeholder="john@example.com"
+                    className={errors.email ? "border-destructive" : ""}
                   />
-                  {errors.emailOrUsername && (
-                    <p className="text-sm text-destructive">{errors.emailOrUsername.message}</p>
+                  {errors.email && (
+                    <p className="text-sm text-destructive">{errors.email.message}</p>
                   )}
                 </div>
 

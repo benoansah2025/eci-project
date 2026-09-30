@@ -2,20 +2,13 @@ import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
 import { Mail, CheckCircle, ArrowLeft } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const VerifyEmail = () => {
-  const [isResending, setIsResending] = useState(false);
-  const [countdown, setCountdown] = useState(60);
-  const [canResend, setCanResend] = useState(false);
-  const { toast } = useToast();
   const navigate = useNavigate();
   const location = useLocation();
-  
   const email = location.state?.email;
 
   useEffect(() => {
@@ -38,52 +31,6 @@ const VerifyEmail = () => {
     return () => clearInterval(timer);
   }, [email, navigate]);
 
-  const handleResendEmail = async () => {
-    setIsResending(true);
-    try {
-      const { error } = await supabase.auth.resend({
-        type: 'signup',
-        email,
-        options: {
-          emailRedirectTo: `${window.location.origin}/auth/callback`,
-        },
-      });
-
-      if (error) {
-        toast({
-          title: "Error",
-          description: error.message,
-          variant: "destructive",
-        });
-      } else {
-        toast({
-          title: "Email Resent",
-          description: "A new verification email has been sent to your inbox.",
-        });
-        setCountdown(60);
-        setCanResend(false);
-        
-        const timer = setInterval(() => {
-          setCountdown((prev) => {
-            if (prev <= 1) {
-              setCanResend(true);
-              clearInterval(timer);
-              return 0;
-            }
-            return prev - 1;
-          });
-        }, 1000);
-      }
-    } catch (error) {
-      toast({
-        title: "Error",
-        description: "Failed to resend verification email. Please try again.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsResending(false);
-    }
-  };
 
   return (
     <div className="min-h-screen bg-gradient-warm">
@@ -128,22 +75,15 @@ const VerifyEmail = () => {
 
                   <div className="space-y-2">
                     <p className="text-sm text-muted-foreground">
-                      Didn't receive the email?
+                      Didn't receive the code?
                     </p>
-                    {canResend ? (
-                      <Button
-                        variant="outline"
-                        onClick={handleResendEmail}
-                        disabled={isResending}
-                        className="w-full"
-                      >
-                        {isResending ? "Resending..." : "Resend Verification Email"}
-                      </Button>
-                    ) : (
-                      <p className="text-sm text-muted-foreground">
-                        Resend available in {countdown}s
-                      </p>
-                    )}
+                    <Button
+                      variant="outline"
+                      onClick={() => navigate("/auth/sign-up")}
+                      className="w-full"
+                    >
+                      Go back and try again
+                    </Button>
                   </div>
                 </div>
 
