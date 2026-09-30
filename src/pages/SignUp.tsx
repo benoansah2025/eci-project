@@ -71,7 +71,7 @@ const SignUp = () => {
   const onSubmit = async (data: SignUpFormData) => {
     setIsLoading(true);
     try {
-      await api.post('/api/accounts/signup/', {
+      const res = await api.post<{ success: boolean; user?: unknown }>('/api/accounts/signup/', {
         email: data.email,
         first_name: data.firstName,
         last_name: data.lastName,
@@ -80,13 +80,13 @@ const SignUp = () => {
         password: data.password,
       });
 
-      toast({
-        title: "Code sent",
-        description: "A verification code has been sent to your email.",
-      });
-      navigate("/auth/verify-otp", {
-        state: { email: data.email, isSignUp: true },
-      });
+      if (res.user) {
+        toast({ title: "Account created!", description: "Welcome to ECI." });
+        navigate("/dashboard");
+      } else {
+        toast({ title: "Code sent", description: "A verification code has been sent to your email." });
+        navigate("/auth/verify-otp", { state: { email: data.email, isSignUp: true } });
+      }
     } catch (error) {
       toast({
         title: "Error",

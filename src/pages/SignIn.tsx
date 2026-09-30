@@ -48,18 +48,18 @@ const location = useLocation();
   const onSubmit = async (data: SignInFormData) => {
     setIsLoading(true);
     try {
-      await api.post('/api/accounts/signin/', {
+      const res = await api.post<{ success: boolean; user?: unknown }>('/api/accounts/signin/', {
         email: data.email,
         password: data.password,
       });
 
-      toast({
-        title: "Code sent",
-        description: "A verification code has been sent to your email.",
-      });
-      navigate("/auth/verify-otp", {
-        state: { email: data.email, isSignIn: true },
-      });
+      if (res.user) {
+        toast({ title: "Welcome back!", description: "Signed in successfully." });
+        navigate("/dashboard");
+      } else {
+        toast({ title: "Code sent", description: "A verification code has been sent to your email." });
+        navigate("/auth/verify-otp", { state: { email: data.email, isSignIn: true } });
+      }
     } catch (error) {
       toast({
         title: "Error",
